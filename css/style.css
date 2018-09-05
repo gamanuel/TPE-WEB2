@@ -1,0 +1,36 @@
+.fondoInicio {
+  background-image: url("../images/fondoIni.jpg");
+  height: 606px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nosotros_fondo {
+  background-image: url("../images/mclaren1.jpg");
+  height: 450px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.tituloCategoria {
+  text-align: center;
+}
+
+.Imagen_Auto {
+  width: 100%;
+}
+
+.hover_div_categoria:hover {
+  background-color: rgba(224, 215, 195, 0.68);
+}
+
+.texto_Nosotros {
+  background-color: white;
+  padding: 2px;
+  text-align: justify;
+}
