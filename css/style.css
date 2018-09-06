@@ -1,3 +1,13 @@
+@media screen and (max-device-width:700px){
+
+p{
+  font-size: 0.7em;
+}
+
+
+
+}
+
 .fondoInicio {
   background-image: url("../images/fondoIni.jpg");
   height: 606px;
