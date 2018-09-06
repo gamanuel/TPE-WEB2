@@ -27,6 +27,15 @@ p{
 
 }
 
+.fondoContacto {
+  background-image: url("../images/imagenfondomedio.jpg");
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .tituloCategoria {
   text-align: center;
 }

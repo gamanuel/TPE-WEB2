@@ -105,7 +105,7 @@
   </div>
 
   <div class="Contacto" id="id_Contacto">
-    <div class="">
+    <div class="container-fluid">
       <h1 class="font-weight-normal tituloCategoria mt-4 mb-4">Contacto</h1>
 
       <div class="headerContacto">
@@ -137,22 +137,36 @@
             <p>02244 45-1666</p>  </div>
         </div>
 
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+        <div class="bodyContacto container-fluid  row ">
+          <div class="divBodyContacto col-md-6">
+            <h1>Envianos un Mensaje</h1>
+            <p>Comentanos tu consulta</p>
+            <a href="#">Preguntas Frecuentes</a>
+          </div>
+
+          <div class="formularioContacto  col-md-6">
+            <form class="row">
+              <div class="form-group col-md-6">
+                <label for="exampleInputEmail1">Nombre</label>
+                <input type="text" class="form-control" id="exampleInputNombre" aria-describedby="emailHelp" placeholder="Ingrese su Nombre">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Apellido</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su Apellido">
+              </div>
+              <div class="form-group col-md-12">
+                <label for="exampleInputEmail1">Correo</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su Correo">
+                <small id="emailHelp" class="form-text text-muted">No compartiremos tu direccion de mail con nadie mas</small>
+              </div>
+              <div class="form-group col-md-12">
+                <label for="exampleFormControlTextarea1">Comentario</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-outline-warning margenBotonEnviarFormulario">Enviar</button>
+            </form>
+
+          </div>
     </div>
   </div>
   <script src="js/jquery.js"></script>
