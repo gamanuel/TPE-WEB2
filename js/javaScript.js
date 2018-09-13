@@ -1,7 +1,7 @@
 "use strict"
 //Modal Iniciar Sesion - Registro
 let btn_IniciarSesion_Registrarse = document.querySelector('#Boton_IniciarSesion_Registrarse');
-btn_IniciarSesion_Registrarse.addEventListener('click', partialRender_Abrir_Modal_IniciarSesion_Registrarse);
+// btn_IniciarSesion_Registrarse.addEventListener('click', partialRender_Abrir_Modal_IniciarSesion_Registrarse);
 let divContenedor_Modal_InicarSesion_Registrarse = document.querySelector('#container_Modal_IniciarSesion_Registrarse');
 //Fin modal
 

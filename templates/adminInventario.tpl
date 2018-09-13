@@ -3,9 +3,10 @@
 
 <head>
   <meta charset="utf-8">
+  <base href="{$basehref}" target="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
   <title>TPE</title>
 </head>
 
@@ -27,11 +28,11 @@
           <a class="nav-link" href="#id_Nosotros">Mensajes</a>
         </li>
       </ul>
-      <label>Bienvenido "Recibir Nombre del Admin y su permiso"</label>
+      <label>Bienvenido "Recibir Nombre del Admin"</label>
     </div>
   </nav>
 
-  
+  <h1>hola mundo</h1>
 
   <script src="../js/jquery.js"></script>
   <script src="../js/javaScript.js" charset="utf-8"></script>

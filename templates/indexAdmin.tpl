@@ -2,13 +2,11 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <base href="{$basehref}" target="">
   <meta charset="utf-8">
+  <base href="{$basehref}" target="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <title>TPE</title>
 </head>
 
@@ -24,22 +22,23 @@
           <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#id_Categoria">Categoria</a>
+          <a class="nav-link" href="adminInventario.tpl">Inventario</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#id_Nosotros">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#id_Contacto">Contacto</a>
+          <a class="nav-link" href="#id_Nosotros">Mensajes</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
-      <button class="btn btn-outline-warning my-2 my-sm-0 ml-2" data-toggle="modal" data-target="#exampleModalCenterHola" id="Boton_IniciarSesion_Registrarse" type="submit">Iniciar Sesion - Registrarse</button>
+      <label>Bienvenido "Recibir Nombre del Admin"</label>
     </div>
   </nav>
 
 
-  {include file="ventanasEmergentesNav.tpl"}
+
+
+
+  <script src="../js/jquery.js"></script>
+  <script src="../js/javaScript.js" charset="utf-8"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+
+</html>

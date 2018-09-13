@@ -26,6 +26,12 @@
        $smarty->display('templates/index.tpl');
    }
 
+   public function mostrarAdmin(){
+     $smarty = new Smarty();
+     $smarty->assign('basehref',$this->basehref);
+     $smarty->display('templates/indexAdmin.tpl');
+   }
+
 }
 
 ?>

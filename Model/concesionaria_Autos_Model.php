@@ -19,6 +19,12 @@ class CategoriaModel {
     return $sentencia->fetchAll(PDO::FETCH_OBJ);
   }
 
+  public function getUsers(){
+    $sentencia = $this->conectarBaseDeDatos->prepare("select * from usuarios");
+    $sentencia->execute();
+    return $sentencia->fetchAll(PDO::FETCH_OBJ);
+  }
+
 
 
 }
