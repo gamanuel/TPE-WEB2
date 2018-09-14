@@ -8,7 +8,7 @@ class CategoriaModel {
   }
 
   public function getCategories(){
-    $sentencia = $this->conectarBaseDeDatos->prepare("select * from categoria");
+    $sentencia = $this->conectarBaseDeDatos->prepare("select * from categoria order by Nombre");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_OBJ);
   }

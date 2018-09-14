@@ -1,5 +1,6 @@
 <?php
   require_once 'Controller/paginaController.php';
+  
 
   define('ACTION',0);
   define('VALOR1',1);
@@ -16,9 +17,13 @@
       $controller = new paginaController();
       $controller->postLogin($partesUrl[VALOR1],$partesUrl[VALOR2]);
       break;
+    case 'categoria':
+      $controller = new paginaController();
+      $controller->showVehicles();
     default:
       $controller = new paginaController();
       $controller->showCategories();
+
       break;
   }
 

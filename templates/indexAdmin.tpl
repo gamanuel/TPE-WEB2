@@ -19,18 +19,29 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Inventario <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="adminInventario.tpl">Inventario</a>
+          <a class="nav-link" href="adminInventario.tpl">Agregar Producto</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#id_Nosotros">Mensajes</a>
         </li>
       </ul>
-      <label>Bienvenido "Recibir Nombre del Admin"</label>
+      <label>Bienvenido </label>
     </div>
   </nav>
+
+  <div class="row">
+    {foreach from=$baseDeDatosAut item=vehiculo}
+      <div class="col-md-4 hover_div_categoria">
+        <a href="categoria/{$categoria->id_clase}" id="boton_Categoria_Autos_{$categoria->id_clase}" data-toggle="modal" data-target=".bd-example-modal-lg-{$categoria->id_clase}"><img class="Imagen_Auto" src="images/autoImagen.jpg" alt=""></a>
+        <h2 class="font-weight-light tituloCategoria">{$categoria->Nombre}</h2>
+      </div>
+    {/foreach}
+  </div>
+
+
 
 
 

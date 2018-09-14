@@ -1,6 +1,7 @@
 <?php
   require_once 'Model/concesionaria_Autos_Model.php';
   require_once "libs/Smarty.class.php";
+
   class ProgramaView {
 
     private $basehref;
@@ -24,12 +25,6 @@
        $smarty->assign('baseDeDatosAut',$baseDeDatosAut);
        $smarty->assign('basehref',$this->basehref);
        $smarty->display('templates/index.tpl');
-   }
-
-   public function mostrarAdmin(){
-     $smarty = new Smarty();
-     $smarty->assign('basehref',$this->basehref);
-     $smarty->display('templates/indexAdmin.tpl');
    }
 
 }
