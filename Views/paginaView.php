@@ -13,9 +13,10 @@
       }
 
 
-    public function mostrarCategorias($baseDeDatosCat) {
+    public function mostrarCategorias($baseDeDatosCat,$baseDeDatosAut) {
        $smarty = new Smarty();
        $smarty->assign('baseDeDatosCat',$baseDeDatosCat);
+       $smarty->assign('baseDeDatosAut',$baseDeDatosAut);
        $smarty->assign('basehref',$this->basehref);
        $smarty->display('templates/index.tpl');
      }
@@ -24,7 +25,14 @@
        $smarty = new Smarty();
        $smarty->assign('baseDeDatosAut',$baseDeDatosAut);
        $smarty->assign('basehref',$this->basehref);
-       $smarty->display('templates/index.tpl');
+       //$smarty->display('templates/index.tpl');
+   }
+
+   public function mostrarAdmin($user){
+     $smarty = new Smarty();
+     $smarty->assign('basehref',$this->basehref);
+     $smarty->assign('usuario',$user);
+     $smarty->display('templates/indexAdmin.tpl');
    }
 
 }

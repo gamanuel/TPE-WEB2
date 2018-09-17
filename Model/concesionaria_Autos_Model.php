@@ -1,5 +1,5 @@
 <?php
-class CategoriaModel {
+class PaginaModel {
 
   private $conectarBaseDeDatos;
 
@@ -19,13 +19,17 @@ class CategoriaModel {
     return $sentencia->fetchAll(PDO::FETCH_OBJ);
   }
 
-  public function getUsers(){
-    $sentencia = $this->conectarBaseDeDatos->prepare("select * from usuarios");
+  public function getUsers($mail,$password){
+    $sentencia = $this->conectarBaseDeDatos->prepare("select * from usuarios WHERE mail = '$mail' and password = '$password'");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_OBJ);
   }
 
-
+  public function getTabla($laTabla){
+    $sentencia = $this->conectarBaseDeDatos->prepare("select * from $laTabla");
+    $sentencia->execute();
+    return $sentencia->fetchAll(PDO::FETCH_OBJ);
+  }
 
 }
 

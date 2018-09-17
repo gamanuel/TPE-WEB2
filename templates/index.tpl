@@ -53,7 +53,7 @@
           </button>
           </div>
           <div class="modal-body" id="container_Modal_IniciarSesion_Registrarse">
-            <form class="" action="Datos_Iniciar_Sesion" method="post">
+            <form class="" action="admin" method="post">
               <div class="form-group">
                 <label for="exampleInputEmail1">Email</label>
                 <input type="email" name="email_Iniciar_Sesion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresar email">
@@ -63,7 +63,6 @@
                 <input type="password" name="contraseña_Iniciar_Sesion" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-outline-warning" id="boton_Registrarse">Registrarse</button>
                 <button type="sumbit" class="btn btn-warning">Ingresar</button>
               </div>
             </form>
@@ -87,19 +86,21 @@
       <div class="row">
         {foreach from=$baseDeDatosCat item=categoria}
         <div class="col-md-4 hover_div_categoria">
-          <a href="categoria/{$categoria->id_clase}" data-toggle="modal" data-target=".bd-example-modal-lg-{$categoria->id_clase}"><img class="Imagen_Auto" src="images/{$categoria->id_clase}.jpg" alt=""></a>
+          <a href="categoria/{$categoria->id_categoria}" data-toggle="modal" data-target=".bd-example-modal-lg-{$categoria->id_categoria}"><img class="Imagen_Auto" src="images/{$categoria->id_categoria}.jpg" alt=""></a>
           <h2 class="font-weight-light tituloCategoria">{$categoria->Nombre}</h2>
           <!--Ventana Modal Categoria Autos -->
-          <div class="modal fade bd-example-modal-lg-{$categoria->id_clase}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal fade bd-example-modal-lg-{$categoria->id_categoria}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <h1 class="tituloCategoria font-weight-normal">{$categoria->Nombre}</h1>
                 <div class="container mt-2 row">
                   {foreach from=$baseDeDatosAut item=vehiculo}
+                    {if $categoria->id_categoria == $vehiculo->id_categoria}
                         <div class="col-md-3 hover_div_categoria">
-                          <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><img class="Imagen_Auto" src="images/autoImagen.jpg" alt=""></a>
+                          <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><img class="Imagen_Auto" src="images/1.jpg" alt=""></a>
                           <h2 class="font-weight-light tituloCategoria">{$vehiculo->modelo}</h2>
                         </div>
+                    {/if}
                   {/foreach}
                 </div>
               </div>
