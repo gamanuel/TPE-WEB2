@@ -31,7 +31,7 @@
           <a class="nav-link" href="#id_Nosotros">Mensajes</a>
         </li>
       </ul>
-      <label>Bienvenido   </label>
+      <label>Bienvenido </label>
 
     </div>
   </nav>

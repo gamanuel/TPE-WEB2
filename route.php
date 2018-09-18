@@ -31,6 +31,10 @@
       $controller = new paginaController();
       $controller->showPostVehicle();
       break;
+    case 'vehiculo':
+      $controller = new paginaController();
+      $controller->showDetailVehicle($partesUrl[VALOR1]);
+      break;
     default:
       $controller = new paginaController();
       $controller->showCategories();

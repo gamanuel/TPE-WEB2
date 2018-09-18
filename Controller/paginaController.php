@@ -24,10 +24,10 @@
       $mail = $_POST['email_Iniciar_Sesion'];
       $password = $_POST['contrasenia_Iniciar_Sesion'];
       $baseDeDatosUser = $loginModel->getUsers($mail,$password);
-    //  if(count($baseDeDatosUser)==1){
+      if(count($baseDeDatosUser)==1){
         $view = new ProgramaView();
         $view->mostrarAdmin($baseDeDatosUser);
-    //  }
+      }
     }
 
     public function showAddVehicle() {
@@ -48,6 +48,13 @@
       $paginaModel = new PaginaModel();
       $paginaModel-> guardarVehiculo($categoria,$modelo,$descripcion,$anio,$kilometros,$precio);
 
+    }
+
+    public function showDetailVehicle($id){
+      $vehiculo = new PaginaModel();
+      $vehiculoID = $vehiculo->getDetailVehicle($id);
+      $view = new ProgramaView();
+      $view->mostrarDetalleVehiculo($vehiculoID[0]);
     }
 
 

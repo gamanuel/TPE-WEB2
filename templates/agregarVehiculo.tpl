@@ -4,7 +4,7 @@
   <h1 class="font-weight-light tituloCategoria">Agregar vehiculo</h1>
   <form class="row" action="guardarVehiculo" method="POST">
     <select class="form-control col-md-12 ml-1" name="vehiculo_Categoria">
-      <option value="">Categoria</option>
+      <option value="-1">Categoria</option>
       {foreach from=$categorias item=categoria}
         <option value="{$categoria->id_categoria}">{$categoria->Nombre}</option>
       {/foreach}

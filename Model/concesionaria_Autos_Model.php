@@ -19,6 +19,12 @@ class PaginaModel {
     return $sentencia->fetchAll(PDO::FETCH_OBJ);
   }
 
+  public function getDetailVehicle($id){
+    $sentencia = $this->conectarBaseDeDatos->prepare("select * from vehiculo WHERE id_vehiculo = '$id'");
+    $sentencia->execute();
+    return $sentencia->fetchAll(PDO::FETCH_OBJ);
+  }
+
   public function getUsers($mail,$password){
     $sentencia = $this->conectarBaseDeDatos->prepare("select * from usuarios WHERE mail = '$mail' and password = '$password'");
     $sentencia->execute();

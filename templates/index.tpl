@@ -7,8 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <title>TPE</title>
 </head>
 
@@ -96,14 +94,17 @@
                 <div class="container mt-2 row">
                   {foreach from=$baseDeDatosAut item=vehiculo}
                     {if $categoria->id_categoria == $vehiculo->id_categoria}
-                  <!--  <div class="" id="contenedor_vehiculos_categoria">-->
-                      <div class="col-md-3 hover_div_categoria">
+
+                      <div class="col-md-3 hover_div_categoria js_vehiculo" data-cat="{$categoria->id_categoria}" data-id="{$vehiculo->id_vehiculo}">
                         <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><img class="Imagen_Auto" src="images/1.jpg" alt=""></a>
                         <h2 class="font-weight-light tituloCategoria">{$vehiculo->modelo}</h2>
-                    </div>
+                      </div>
+
 
                     {/if}
                   {/foreach}
+                  <div class="container-fluid tamaño" id="contenedor_vehiculos_categoria_{$categoria->id_categoria}"></div>
+
                 </div>
               </div>
             </div>
@@ -172,20 +173,20 @@
               <form class="row">
                 <div class="form-group col-md-6">
                   <label for="exampleInputEmail1">Nombre</label>
-                  <input type="text" class="form-control" id="exampleInputNombre" aria-describedby="emailHelp" placeholder="Ingrese su Nombre">
+                  <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Ingrese su Nombre">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="exampleInputPassword1">Apellido</label>
-                  <input type="text" class="form-control" id="" placeholder="Ingrese su Apellido">
+                  <input type="text" class="form-control" placeholder="Ingrese su Apellido">
                 </div>
                 <div class="form-group col-md-12">
                   <label for="exampleInputEmail1">Correo</label>
-                  <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Ingrese su Correo">
-                  <small id="emailHelp" class="form-text text-muted">No compartiremos tu direccion de mail con nadie mas</small>
+                  <input type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Ingrese su Correo">
+                  <small class="form-text text-muted">No compartiremos tu direccion de mail con nadie mas</small>
                 </div>
                 <div class="form-group col-md-12">
                   <label for="exampleFormControlTextarea1">Comentario</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <textarea class="form-control" rows="3"></textarea>
                 </div>
                 <button type="submit" class="btn btn-outline-warning margenBotonEnviarFormulario">Enviar</button>
               </form>
