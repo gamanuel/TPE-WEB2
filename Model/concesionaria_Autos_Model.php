@@ -31,6 +31,12 @@ class PaginaModel {
     return $sentencia->fetchAll(PDO::FETCH_OBJ);
   }
 
+  public function guardarVehiculo($categoria,$modelo,$descripcion,$año,$kilometros,$precio){
+    $sentencia = $this->conectarBaseDeDatos->prepare("INSERT INTO vehiculo(modelo,descripcion,anio,kilometros,precio,id_categoria) VALUES(?,?,?,?,?,?)");
+    $sentencia->execute(array($modelo,$descripcion,$año,$kilometros,$precio,$categoria));
+
+  }
+
 }
 
 

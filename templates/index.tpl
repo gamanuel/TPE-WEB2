@@ -60,7 +60,7 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Contraseña</label>
-                <input type="password" name="contraseña_Iniciar_Sesion" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                <input type="password" name="contrasenia_Iniciar_Sesion" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
               </div>
               <div class="modal-footer">
                 <button type="sumbit" class="btn btn-warning">Ingresar</button>
@@ -96,10 +96,12 @@
                 <div class="container mt-2 row">
                   {foreach from=$baseDeDatosAut item=vehiculo}
                     {if $categoria->id_categoria == $vehiculo->id_categoria}
-                        <div class="col-md-3 hover_div_categoria">
-                          <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><img class="Imagen_Auto" src="images/1.jpg" alt=""></a>
-                          <h2 class="font-weight-light tituloCategoria">{$vehiculo->modelo}</h2>
-                        </div>
+                  <!--  <div class="" id="contenedor_vehiculos_categoria">-->
+                      <div class="col-md-3 hover_div_categoria">
+                        <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><img class="Imagen_Auto" src="images/1.jpg" alt=""></a>
+                        <h2 class="font-weight-light tituloCategoria">{$vehiculo->modelo}</h2>
+                    </div>
+
                     {/if}
                   {/foreach}
                 </div>

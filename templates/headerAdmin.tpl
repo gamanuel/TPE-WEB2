@@ -19,24 +19,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Inventario <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#id_Categoria">Inventario</a>
+          <a class="nav-link" href="#">Categoria</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="adminInventario">Vehiculo</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#id_Nosotros">Mensajes</a>
         </li>
       </ul>
-      <label>Bienvenido "Recibir Nombre del Admin"</label>
+      <label>Bienvenido   </label>
+
     </div>
   </nav>
-
-  <h1>hola mundo</h1>
-
-  <script src="../js/jquery.js"></script>
-  <script src="../js/javaScript.js" charset="utf-8"></script>
-  <script src="../js/bootstrap.min.js"></script>
-</body>
-
-</html>
