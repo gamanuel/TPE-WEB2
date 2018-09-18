@@ -31,8 +31,11 @@
     }
 
     public function showAddVehicle() {
+      $categoriaModel = new PaginaModel();
+      $baseDeDatosCat = $categoriaModel->getTabla("categoria");
+      $baseDeDatosAut = $categoriaModel->getVehicles();
       $view = new ProgramaView();
-      $view->mostrarAgregarVehiculo();
+      $view->mostrarAgregarVehiculo($baseDeDatosAut,$baseDeDatosCat);
     }
 
     public function showPostVehicle(){

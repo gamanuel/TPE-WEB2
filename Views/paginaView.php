@@ -35,8 +35,10 @@
      $smarty->display('templates/indexAdmin.tpl');
    }
 
-   public function mostrarAgregarVehiculo(){
+   public function mostrarAgregarVehiculo($vehiculos,$categoria){
      $smarty = new Smarty();
+     $smarty->assign('vehiculos',$vehiculos);
+     $smarty->assign('categorias',$categoria);
      $smarty->assign('basehref',$this->basehref);
      $smarty->display('templates/agregarVehiculo.tpl');
    }

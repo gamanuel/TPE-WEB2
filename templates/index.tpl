@@ -86,7 +86,7 @@
       <div class="row">
         {foreach from=$baseDeDatosCat item=categoria}
         <div class="col-md-4 hover_div_categoria">
-          <a href="categoria/{$categoria->id_categoria}" data-toggle="modal" data-target=".bd-example-modal-lg-{$categoria->id_categoria}"><img class="Imagen_Auto" src="images/{$categoria->id_categoria}.jpg" alt=""></a>
+          <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg-{$categoria->id_categoria}"><img class="Imagen_Auto" src="images/{$categoria->id_categoria}.jpg" alt=""></a>
           <h2 class="font-weight-light tituloCategoria">{$categoria->Nombre}</h2>
           <!--Ventana Modal Categoria Autos -->
           <div class="modal fade bd-example-modal-lg-{$categoria->id_categoria}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
