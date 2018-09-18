@@ -23,19 +23,15 @@
   {foreach from=$vehiculos item=vehiculo}
     <div class=" col-md-3">
       <div class="col-md-12 contenedorHover">
-        <img class="imagen_vehiculo_hover" src="images/1.jpg" alt="">
+        <img class="imagen_vehiculo_hover" src="images/3.jpg" alt="">
         <div class="overlay">
           <div class="text ">
-            <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal" type="button">Editar</button>
-              <a href="" data-toggle="modal" data-target=".bd-example-modal-lg-{$vehiculo->id_vehiculo}">Editar</a>
+            <button class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg-{$veiculo->id_vehiculo}" type="button">Editar</button>
             <!-- Modal Editar Vehiculo Seleccionado -->
-            <div class="modal fade bd-example-modal-lg-{$vehiculo->id_vehiculo}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal fade bd-example-modal-lg-{$veiculo->id_vehiculo}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                  <h1 class="tituloCategoria font-weight-normal">{$vehiculo->modelo}</h1>
-                  <div class="container mt-2 row">
-                    <!--  <div class="" id="contenedor_vehiculos_categoria">-->
-                  </div>
+                  <h1>{$vehiculo->modelo}</h1>
                 </div>
               </div>
             </div>
@@ -45,6 +41,7 @@
           </div>
         </div>
       </div>
+      <h1 class="tituloCategoria font-weight-light">{$vehiculo->modelo}</h1>
     </div>
   {/foreach}
   </div>

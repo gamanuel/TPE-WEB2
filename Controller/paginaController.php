@@ -24,10 +24,10 @@
       $mail = $_POST['email_Iniciar_Sesion'];
       $password = $_POST['contrasenia_Iniciar_Sesion'];
       $baseDeDatosUser = $loginModel->getUsers($mail,$password);
-      if(count($baseDeDatosUser)==1){
+    //  if(count($baseDeDatosUser)==1){
         $view = new ProgramaView();
         $view->mostrarAdmin($baseDeDatosUser);
-      }
+    //  }
     }
 
     public function showAddVehicle() {
