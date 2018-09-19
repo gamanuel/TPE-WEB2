@@ -99,8 +99,7 @@
                         <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><img class="Imagen_Auto" src="images/1.jpg" alt=""></a>
                         <h2 class="font-weight-light tituloCategoria">{$vehiculo->modelo}</h2>
                       </div>
-
-
+                      
                     {/if}
                   {/foreach}
 
