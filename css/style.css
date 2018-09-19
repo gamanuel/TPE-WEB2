@@ -127,3 +127,7 @@ p{
 .tamaño{
   width: 100%;
 }
+
+.colorFondo {
+  background-color: rgba(251, 248, 201, 0.63);
+}

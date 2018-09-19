@@ -91,7 +91,7 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <h1 class="tituloCategoria font-weight-normal">{$categoria->Nombre}</h1>
-                <div class="container mt-2 row">
+                <div class="container row">
                   {foreach from=$baseDeDatosAut item=vehiculo}
                     {if $categoria->id_categoria == $vehiculo->id_categoria}
 
@@ -103,9 +103,9 @@
 
                     {/if}
                   {/foreach}
-                  <div class="container-fluid tamaño" id="contenedor_vehiculos_categoria_{$categoria->id_categoria}"></div>
 
                 </div>
+                <div class="row mx-auto container-fluid  tituloCategoria  colorFondo" id="contenedor_vehiculos_categoria_{$categoria->id_categoria}"></div>
               </div>
             </div>
           </div>

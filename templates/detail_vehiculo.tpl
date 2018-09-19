@@ -1,20 +1,37 @@
-<div class="row tituloCategoria">
-  <div class="col-md-10">
-    <h2 class="font-weight-light">{$vehiculo->modelo}</h2>
+  <div class="col-md-6 mt-1">
+    <div class="col-md-12">
+      <p>{$vehiculo->descripcion}</p>
+    </div>
+    <div class="col-md-12">
+      <p>Modelo: {$vehiculo->anio}</p>
+    </div>
+    <div class="col-md-12">
+      <p>Km: {$vehiculo->kilometros}</p>
+    </div>
+    <div class="col-md-12">
+      <p>Valor: ${$vehiculo->precio}</p>
+    </div>
   </div>
-  <div class="col-md-2">
-    <button class="btn btn-light cerrar_Modal_Detalle_{$vehiculo->id_vehiculo}"  type="button" name="button">X</button>
+  <div class="col-md-6 mb-1 mt-1">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="images/1.jpg" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/2.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/3.jpg" alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-  <div class="col-md-4">
-    <p>{$vehiculo->descripcion}</p>
   </div>
-  <div class="col-md-2">
-    <p>Modelo: {$vehiculo->anio}</p>
-  </div>
-  <div class="col-md-2">
-    <p>Km: {$vehiculo->kilometros}</p>
-  </div>
-  <div class="col-md-2">
-    <p>Valor: ${$vehiculo->precio}</p>
-  </div>
-</div>
