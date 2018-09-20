@@ -4,7 +4,7 @@
   require_once 'Controller/SecuredController.php';
 
 
-  class paginaController  {
+  class paginaController extends SecuredController  {
 
     public function showCategories() {
       $categoriaModel = new PaginaModel();
@@ -51,7 +51,7 @@
     public function showAdmin(){
         $view = new ProgramaView();
         $view-> mostrarAdmin();
-        
+
     }
 
 

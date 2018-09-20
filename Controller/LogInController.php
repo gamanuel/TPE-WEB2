@@ -18,6 +18,7 @@ class LogInController extends Controller {
         session_start();
         $_SESSION['USERNAME'] = $usuario->nombre;
         header('Location: admin');
+        die();
       }
     }
 
