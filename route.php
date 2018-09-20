@@ -1,5 +1,7 @@
 <?php
   require_once 'Controller/paginaController.php';
+  require_once 'Controller/LogInController.php';
+
 
 
   define('ACTION',0);
@@ -19,11 +21,19 @@
   $partesUrl = explode('/', $action);
 
   switch ($partesUrl[ACTION]) {
+    case 'logIn':
+      $controller = new LogInController();
+      $controller-> verify();
+      break;
+    case 'cerrarSesion':
+      $controller = new LogInController();
+      $controller->logOut();
+      break;
     case 'admin':
       $controller = new paginaController();
-      $controller->postLogin();
+      $controller->showAdmin();
       break;
-    case 'adminInventario':
+    case 'admin/vehiculo':
       $controller = new paginaController();
       $controller->showAddVehicle();
       break;

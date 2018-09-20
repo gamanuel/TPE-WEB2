@@ -51,7 +51,7 @@
           </button>
           </div>
           <div class="modal-body" id="container_Modal_IniciarSesion_Registrarse">
-            <form class="" action="admin" method="post">
+            <form class="" action="logIn" method="post">
               <div class="form-group">
                 <label for="exampleInputEmail1">Email</label>
                 <input type="email" name="email_Iniciar_Sesion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresar email">
@@ -99,7 +99,7 @@
                         <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><img class="Imagen_Auto" src="images/1.jpg" alt=""></a>
                         <h2 class="font-weight-light tituloCategoria">{$vehiculo->modelo}</h2>
                       </div>
-                      
+
                     {/if}
                   {/foreach}
 

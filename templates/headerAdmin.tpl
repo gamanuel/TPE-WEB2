@@ -25,13 +25,13 @@
           <a class="nav-link" href="#">Categoria</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="adminInventario">Vehiculo</a>
+          <a class="nav-link" href="admin/vehiculo">Vehiculo</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#id_Nosotros">Mensajes</a>
         </li>
       </ul>
-      <label>Bienvenido </label>
+      <label>Bienvenido {$username}  <a href="cerrarSesion">Cerrar Sesion</a> </label>
 
     </div>
   </nav>

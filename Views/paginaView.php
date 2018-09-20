@@ -5,11 +5,14 @@
   class ProgramaView {
 
     private $basehref;
+    private $username;
 
     public function __construct() {
 
        $this->basehref = '//'.$_SERVER['SERVER_NAME']
                   .dirname($_SERVER['PHP_SELF']).'/';
+      
+      $this->username = $_SESSION['USERNAME'];
       }
 
 
@@ -28,10 +31,10 @@
        //$smarty->display('templates/index.tpl');
    }
 
-   public function mostrarAdmin($user){
+   public function mostrarAdmin(){
      $smarty = new Smarty();
      $smarty->assign('basehref',$this->basehref);
-     $smarty->assign('usuario',$user);
+     $smarty->assign('username',$this->username);
      $smarty->display('templates/indexAdmin.tpl');
    }
 

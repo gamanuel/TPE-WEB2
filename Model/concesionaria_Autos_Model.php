@@ -25,10 +25,10 @@ class PaginaModel {
     return $sentencia->fetchAll(PDO::FETCH_OBJ);
   }
 
-  public function getUsers($mail,$password){
-    $sentencia = $this->conectarBaseDeDatos->prepare("select * from usuarios WHERE mail = '$mail' and password = '$password'");
+  public function getUsers($mail){
+    $sentencia = $this->conectarBaseDeDatos->prepare("select * from usuarios WHERE mail = '$mail'");
     $sentencia->execute();
-    return $sentencia->fetchAll(PDO::FETCH_OBJ);
+    return $sentencia->fetch(PDO::FETCH_OBJ);
   }
 
   public function getTabla($laTabla){

@@ -1,8 +1,10 @@
 <?php
   require_once 'Views/paginaView.php';
   require_once 'Model/concesionaria_Autos_Model.php';
+  require_once 'Controller/SecuredController.php';
 
-  class paginaController {
+
+  class paginaController  {
 
     public function showCategories() {
       $categoriaModel = new PaginaModel();
@@ -17,17 +19,6 @@
       $baseDeDatosAut = $categoriaModel->getVehicles();
       $view = new ProgramaView();
       $view->mostrarVehiculo($baseDeDatosAut);
-    }
-
-    public function postLogin(){
-      $loginModel = new PaginaModel();
-      $mail = $_POST['email_Iniciar_Sesion'];
-      $password = $_POST['contrasenia_Iniciar_Sesion'];
-      $baseDeDatosUser = $loginModel->getUsers($mail,$password);
-      if(count($baseDeDatosUser)==1){
-        $view = new ProgramaView();
-        $view->mostrarAdmin($baseDeDatosUser);
-      }
     }
 
     public function showAddVehicle() {
@@ -56,6 +47,14 @@
       $view = new ProgramaView();
       $view->mostrarDetalleVehiculo($vehiculoID[0]);
     }
+
+    public function showAdmin(){
+        $view = new ProgramaView();
+        $view-> mostrarAdmin();
+        
+    }
+
+
 
 
 
