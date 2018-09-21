@@ -19,10 +19,10 @@ class PaginaModel {
     return $sentencia->fetchAll(PDO::FETCH_OBJ);
   }
 
-  public function getDetailVehicle($id){
-    $sentencia = $this->conectarBaseDeDatos->prepare("select * from vehiculo WHERE id_vehiculo = '$id'");
+  public function getDetailVehicle($modelo){
+    $sentencia = $this->conectarBaseDeDatos->prepare("select * from vehiculo WHERE modelo = '$modelo'");
     $sentencia->execute();
-    return $sentencia->fetchAll(PDO::FETCH_OBJ);
+    return $sentencia->fetch(PDO::FETCH_OBJ);
   }
 
   public function getVehicle($id){

@@ -25,13 +25,13 @@
       $controller = new paginaController();
       $controller->showPostVehicle();
       break;
-      case 'categoria':
-        $controller = new paginaController();
-        $controller->getVehicles($partesUrl[VALOR1]);
-        break;
-    case 'vehiculo':
+    case 'categoria':
       $controller = new paginaController();
-      $controller->showDetailVehicle($partesUrl[VALOR1]);
+      $controller->getVehicles($partesUrl[VALOR1]);
+      break;
+    case 'vehiculo':
+      $controller =new paginaController();
+      $controller->getDetailVehicle($partesUrl[VALOR1]);
       break;
     default:
       $controller = new paginaController();

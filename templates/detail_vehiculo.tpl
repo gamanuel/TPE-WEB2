@@ -1,3 +1,5 @@
+{include file = 'header.tpl'}
+
   <div class="col-md-6 mt-1">
     <div class="col-md-12">
       <p>{$vehiculo->descripcion}</p>
@@ -35,3 +37,10 @@
     </a>
   </div>
   </div>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/javaScript.js" charset="utf-8"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

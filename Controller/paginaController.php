@@ -41,17 +41,11 @@
 
     }
 
-    public function showDetailVehicle($id){
+    public function getDetailVehicle($modelo){
       $vehiculo = new PaginaModel();
-      $vehiculoID = $vehiculo->getDetailVehicle($id);
+      $vehiculoID = $vehiculo->getDetailVehicle($modelo);
       $view = new ProgramaView();
-      $view->mostrarDetalleVehiculo($vehiculoID[0]);
-    }
-
-    public function showAdmin(){
-        $view = new ProgramaView();
-        $view-> mostrarAdmin();
-
+      $view->mostrarDetalleVehiculo($vehiculoID);
     }
 
     public function getVehicles($id){

@@ -3,7 +3,7 @@
   <div class="container-fluid row mt-2">
     {foreach from=$vehiculos item=vehiculo}
     <div class="col-md-4 hover_div_categoria">
-      <a href=""><img class="Imagen_Auto" src="images/{$vehiculo->id_categoria}.jpg" alt=""></a>
+      <a href="vehiculo/{$vehiculo->modelo}"><img class="Imagen_Auto" src="images/{$vehiculo->id_categoria}.jpg" alt=""></a>
       <h2 class="font-weight-light tituloCategoria">{$vehiculo->modelo}</h2>
     </div>
     {/foreach}

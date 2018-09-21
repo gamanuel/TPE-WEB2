@@ -43,9 +43,9 @@
      $smarty->display('templates/agregarVehiculo.tpl');
    }
 
-   public function mostrarDetalleVehiculo($id){
+   public function mostrarDetalleVehiculo($modelo){
      $smarty = new Smarty();
-     $smarty->assign('vehiculo',$id);
+     $smarty->assign('vehiculo',$modelo);
      $smarty->assign('basehref',$this->basehref);
      $smarty->display('templates/detail_vehiculo.tpl');
    }
