@@ -1,43 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-  <base href="{$basehref}" target="">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <title>TPE</title>
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">AUTOCAR  </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#id_Categoria">Categoria</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#id_Nosotros">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#id_Contacto">Contacto</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
-      <button class="btn btn-outline-warning my-2 my-sm-0 ml-2" data-toggle="modal" data-target="#exampleModalCenterHola" id="Boton_IniciarSesion_Registrarse" type="submit">Iniciar Sesion - Registrarse</button>
-    </div>
-  </nav>
+{include file = 'header.tpl'}
   <!--Ventanas Emergentes -->
   <!--Ventana Modal Iniciar Sesion - Registrarse -->
 
@@ -84,30 +45,8 @@
       <div class="row">
         {foreach from=$baseDeDatosCat item=categoria}
         <div class="col-md-4 hover_div_categoria">
-          <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg-{$categoria->id_categoria}"><img class="Imagen_Auto" src="images/{$categoria->id_categoria}.jpg" alt=""></a>
+          <a href="categoria/{$categoria->id_categoria}"><img class="Imagen_Auto" src="images/{$categoria->id_categoria}.jpg" alt=""></a>
           <h2 class="font-weight-light tituloCategoria">{$categoria->Nombre}</h2>
-          <!--Ventana Modal Categoria Autos -->
-          <div class="modal fade bd-example-modal-lg-{$categoria->id_categoria}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <h1 class="tituloCategoria font-weight-normal">{$categoria->Nombre}</h1>
-                <div class="container row">
-                  {foreach from=$baseDeDatosAut item=vehiculo}
-                    {if $categoria->id_categoria == $vehiculo->id_categoria}
-
-                      <div class="col-md-3 hover_div_categoria js_vehiculo" data-cat="{$categoria->id_categoria}" data-id="{$vehiculo->id_vehiculo}">
-                        <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><img class="Imagen_Auto" src="images/1.jpg" alt=""></a>
-                        <h2 class="font-weight-light tituloCategoria">{$vehiculo->modelo}</h2>
-                      </div>
-
-                    {/if}
-                  {/foreach}
-
-                </div>
-                <div class="row mx-auto container-fluid  tituloCategoria  colorFondo" id="contenedor_vehiculos_categoria_{$categoria->id_categoria}"></div>
-              </div>
-            </div>
-          </div>
         </div>
         {/foreach}
       </div>

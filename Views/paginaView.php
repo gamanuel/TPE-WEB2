@@ -5,14 +5,11 @@
   class ProgramaView {
 
     private $basehref;
-    private $username;
 
     public function __construct() {
 
        $this->basehref = '//'.$_SERVER['SERVER_NAME']
                   .dirname($_SERVER['PHP_SELF']).'/';
-      
-      $this->username = $_SESSION['USERNAME'];
       }
 
 
@@ -51,6 +48,13 @@
      $smarty->assign('vehiculo',$id);
      $smarty->assign('basehref',$this->basehref);
      $smarty->display('templates/detail_vehiculo.tpl');
+   }
+
+   public function mostrarVehiculos($id){
+     $smarty = new Smarty();
+     $smarty->assign('vehiculos',$id);
+     $smarty->assign('basehref',$this->basehref);
+     $smarty->display('templates/show_vehiculo_cat.tpl');
    }
 
 }
