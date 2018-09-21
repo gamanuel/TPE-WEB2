@@ -57,6 +57,12 @@
      $smarty->display('templates/show_vehiculo_cat.tpl');
    }
 
+   public function mostrarLogIn(){
+     $smarty = new Smarty();
+     $smarty->assign('basehref',$this->basehref);
+     $smarty->display('templates/show_logIn.tpl');
+   }
+
 }
 
 ?>

@@ -35,6 +35,7 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
         <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Buscar</button>
       </form>
-      <button class="btn btn-outline-warning my-2 my-sm-0 ml-2" data-toggle="modal" data-target="#exampleModalCenterHola" id="Boton_IniciarSesion_Registrarse" type="submit">Iniciar Sesion</button>
+      <button href="IniciarSesion" class="btn btn-outline-warning my-2 my-sm-0 ml-2" type="button">Iniciar Sesion</button>
     </div>
+
   </nav>

@@ -24,6 +24,15 @@ p{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.iniciarSesion_fondo {
+  background-image: url("../images/mclaren1.jpg");
+  height: 601px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
 }
 

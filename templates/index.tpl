@@ -1,38 +1,4 @@
 {include file = 'header.tpl'}
-  <!--Ventanas Emergentes -->
-  <!--Ventana Modal Iniciar Sesion - Registrarse -->
-
-    <div class="modal fade" id="exampleModalCenterHola" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Iniciar Sesion</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          </div>
-          <div class="modal-body" id="container_Modal_IniciarSesion_Registrarse">
-            <form class="" action="logIn" method="post">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="email" name="email_Iniciar_Sesion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresar email">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Contraseña</label>
-                <input type="password" name="contrasenia_Iniciar_Sesion" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-              </div>
-              <div class="modal-footer">
-                <button type="sumbit" class="btn btn-warning">Ingresar</button>
-              </div>
-            </form>
-
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--Fin Ventana Modal Iniciar Sesion - Registrarse -->
 
     <div class="fondoInicio"></div>
 
@@ -46,7 +12,7 @@
         {foreach from=$baseDeDatosCat item=categoria}
         <div class="col-md-4 hover_div_categoria">
           <a href="categoria/{$categoria->id_categoria}"><img class="Imagen_Auto" src="images/{$categoria->id_categoria}.jpg" alt=""></a>
-          <h2 class="font-weight-light tituloCategoria">{$categoria->Nombre}</h2>
+            <h2 class="font-weight-light tituloCategoria">{$categoria->Nombre}</h2>
         </div>
         {/foreach}
       </div>

@@ -30,8 +30,12 @@
       $controller->getVehicles($partesUrl[VALOR1]);
       break;
     case 'vehiculo':
-      $controller =new paginaController();
+      $controller = new paginaController();
       $controller->getDetailVehicle($partesUrl[VALOR1]);
+      break;
+    case 'IniciarSesion':
+      $controller = new paginaController();
+      $controller-> getLogin();
       break;
     default:
       $controller = new paginaController();
