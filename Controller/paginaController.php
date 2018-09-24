@@ -56,10 +56,7 @@
       $view->mostrarVehiculos($vehiculos);
     }
 
-    public function getLogin(){
-      $view = new ProgramaView();
-      $view->mostrarLogIn();
-    }
+    
   }
 
 

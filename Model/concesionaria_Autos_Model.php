@@ -49,6 +49,12 @@ class PaginaModel {
 
   }
 
+  public function deleteVehiculo($id){
+    $sentencia = $this->conectarBaseDeDatos->prepare("Delete from vehiculo WHERE id_vehiculo = '$id'");
+    $sentencia->execute();
+
+  }
+
 }
 
 

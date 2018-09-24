@@ -50,9 +50,10 @@
      $smarty->display('templates/show_vehiculo_cat.tpl');
    }
 
-   public function mostrarLogIn(){
+   public function mostrarLogIn($error = ""){
      $smarty = new Smarty();
      $smarty->assign('basehref',$this->basehref);
+     $smarty->assign('error',$error);
      $smarty->display('templates/show_logIn.tpl');
    }
 

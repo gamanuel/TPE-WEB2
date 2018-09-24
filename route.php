@@ -34,7 +34,7 @@
       $controller->getDetailVehicle($partesUrl[VALOR1]);
       break;
     case 'IniciarSesion':
-      $controller = new paginaController();
+      $controller = new LogInController();
       $controller-> getLogin();
       break;
     case 'cerrarSesion':
@@ -52,6 +52,10 @@
     case 'abmVehiculo':
       $controller = new LogInController();
       $controller-> getAdminVehiculos();
+      break;
+    case 'borrarVehiculo':
+      $controller = new LogInController();
+      $controller-> deleteVehicles($partesUrl[VALOR1]);
       break;
     default:
       $controller = new paginaController();

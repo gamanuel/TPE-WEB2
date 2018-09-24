@@ -1,71 +1,35 @@
 "use strict"
-//Modal Iniciar Sesion - Registro
-let btn_IniciarSesion_Registrarse = document.querySelector('#Boton_IniciarSesion_Registrarse');
-// btn_IniciarSesion_Registrarse.addEventListener('click', partialRender_Abrir_Modal_IniciarSesion_Registrarse);
-let divContenedor_Modal_InicarSesion_Registrarse = document.querySelector('#container_Modal_IniciarSesion_Registrarse');
-//Fin modal
 
-//Modal Categoria-Autos
-//let btn_Categoria_Autos = document.querySelector('boton_Categoria_Autos');
-//btn_Categoria_Autos.addEventListener('click', partialRender_Modal_Categoria_Autos);
+// Get the modal
+document.querySelectorAll('.botonBorrar').forEach(e=> {
+  e.addEventListener('click', a=> {
+    let id_Borrar = e.getAttribute('name');
+    let descripcion_Borrar = e.getAttribute('data-name');
+    document.querySelector('#que_borro').innerHTML = descripcion_Borrar;
+    document.querySelector('#btn_Confirmar').href = 'borrarVehiculo/' + id_Borrar;
+    modal_Confirma_Cancela.style.display = "block";
+  })
+});
 
-function partialRender_Abrir_Modal_IniciarSesion_Registrarse() {
-  fetch('Modal-IniciarSesion.html').then(function (response) {
-    response.text().then(e => {
-      divContenedor_Modal_InicarSesion_Registrarse.innerHTML = e;
-      let btn_Registrarse = document.querySelector('#boton_Registrarse');
-      btn_Registrarse.addEventListener('click', partialRender_Modal_Registrarse);
-    });
-  });
-};
+// Get the button that opens the modal
+let btn = document.getElementById("myBtn");
+let modal_Confirma_Cancela = document.getElementById('myModal');
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
 
+// When the user clicks on the button, open the modal
 
-function partialRender_Modal_Registrarse() {
-  fetch('Modal-Registrarse.html').then(function (response) {
-    response.text().then(e => {
-      divContenedor_Modal_InicarSesion_Registrarse.innerHTML = e;
-      let btn_Volver_Modal_Registro = document.querySelector('#boton_volver_modal_Registro');
-      btn_Volver_Modal_Registro.addEventListener('click', partialRender_Abrir_Modal_IniciarSesion_Registrarse)
-    });
-  });
-};
+// When the user clicks on <span> (x), close the modal
+document.querySelectorAll('.modal_Confirma_Cancela_close').forEach(e=>{
 
-function partialRender_Modal_Categoria_Autos() {
-  let divContenedorModal = document.querySelector('#contenedor_vehiculos_categoria');
-  fetch('Categoria_Modelos.html').then(function (response) {
-    response.text().then(e=> {
-      divContenedorModal.innerHTML = e;
-    });
-  });
-}
-
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
-
-
-function partialRender_Detalle_Vehiculo(id,id_categoria) {
-  fetch('vehiculo/'+id).then(function (response) {
-    if(response.ok){
-      response.text().then(js => {
-        let div_Contenedor_vehiculo = document.querySelector('#contenedor_vehiculos_categoria_' + id_categoria );
-        div_Contenedor_vehiculo.innerHTML = js;
-        document.querySelector('.cerrar_Modal_Detalle_'+id).addEventListener('click', e=> {
-          div_Contenedor_vehiculo.innerHTML = '';
-        });
-      });
-    }
-  });
-}
-
-document.addEventListener("DOMContentLoaded", function(){
-  document.querySelectorAll('.js_vehiculo').forEach(i => {
-    i.addEventListener('click', l=> {
-      let id_vehiculo = i.getAttribute('data-id');
-      let id_categoria = i.getAttribute('data-cat');
-      let div_Contenedor_vehiculo = document.querySelector('#contenedor_vehiculos_categoria');
-
-      partialRender_Detalle_Vehiculo(id_vehiculo,id_categoria);
-    });
+  e.addEventListener('click', a=> {
+    modal_Confirma_Cancela.style.display = "none";
   });
 });
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal_Confirma_Cancela) {
+        modal_Confirma_Cancela.style.display = "none";
+    }
+}

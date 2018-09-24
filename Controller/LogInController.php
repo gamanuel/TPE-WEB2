@@ -1,12 +1,14 @@
 <?php
 
 require_once 'Views/adminView.php';
+require_once 'Views/paginaView.php';
 require_once 'Model/concesionaria_Autos_Model.php';
+require_once  'Controller/Controller.php';
 
 
 
 
-class LogInController {
+class LogInController extends Controller {
 
   public function __construct() {
     session_start();
@@ -17,7 +19,7 @@ class LogInController {
     $mail = $_POST['email_Iniciar_Sesion'];
     $password = $_POST['contrasenia_Iniciar_Sesion'];
     $model = new PaginaModel();
-    $view = new adminView();
+    $viewAdmin = new adminView();
 
     if(!empty($mail) && !empty($password)){
            $user = $model->getUser($mail);
@@ -28,11 +30,17 @@ class LogInController {
                die();
            }
            else {
-               header("Location: indsadadasdasddexAdmin");
+            $viewPagina = new ProgramaView();
+            $mostrarError = $viewPagina->mostrarLogIn("Usuario o contraseña incorrecta");
            }
        }
 
 
+  }
+
+  public function getLogin(){
+    $view = new ProgramaView();
+    $view->mostrarLogIn();
   }
 
   public function getAdmin(){
@@ -58,6 +66,19 @@ class LogInController {
       $baseDeDatosAut = $categoriaModel->getVehicles();
       $baseDeDatosCat = $categoriaModel->getCategories();
       $view->mostrarAbmVehiculos($baseDeDatosAut,$baseDeDatosCat);
+    }
+  }
+
+  public function deleteVehicles($id_delete){
+    if(!isset($_SESSION['MAIL'])){
+      header('Location: ' .HOME);
+      die();
+    }
+    else {
+      $model = new PaginaModel();
+      $model->deleteVehiculo($id_delete);
+      header('Location:'.HOME.'abmVehiculo');
+      die();
     }
   }
 

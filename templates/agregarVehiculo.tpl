@@ -27,17 +27,7 @@
         <div class="overlay">
           <div class="text ">
             <button class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg-{$veiculo->id_vehiculo}" type="button">Editar</button>
-            <!-- Modal Editar Vehiculo Seleccionado -->
-            <div class="modal fade bd-example-modal-lg-{$veiculo->id_vehiculo}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <h1>{$vehiculo->modelo}</h1>
-                </div>
-              </div>
-            </div>
-            <!-- Modal Editar Vehiculo Seleccionado -->
-
-            <button class="btn btn-danger mt-2" type="button" name="button">Eliminar</button>
+            <button class="btn btn-danger mt-2 botonBorrar" type="button" name="{$vehiculo->id_vehiculo}" data-name="{$vehiculo->modelo}">Eliminar</button>
           </div>
         </div>
       </div>
@@ -46,7 +36,21 @@
   {/foreach}
   </div>
 
+  <!-- Modal -->
 
+  <div id="myModal" class="modal_Confirma_Cancela">
 
+  <!-- Modal content -->
+  <div class="modal_Confirma_Cancela_content">
+    <span class="modal_Confirma_Cancela_close">&times;</span>
+    <p>¿Esta Seguro de Eliminar <span id="que_borro"></span>?</p>
+    <div class="">
+      <a class="" href="" id="btn_Confirmar"><button class="btn btn-success" type="button">Confirmar</button></a>
+      <a><button class="btn btn-primary botonBorrar modal_Confirma_Cancela_close" type="button">Cancelar</button></a>
+
+    </div>
+  </div>
 
 </div>
+
+{include file = 'footer.tpl'}
