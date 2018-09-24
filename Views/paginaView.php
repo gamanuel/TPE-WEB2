@@ -28,13 +28,6 @@
        //$smarty->display('templates/index.tpl');
    }
 
-   public function mostrarAdmin(){
-     $smarty = new Smarty();
-     $smarty->assign('basehref',$this->basehref);
-     $smarty->assign('username',$this->username);
-     $smarty->display('templates/indexAdmin.tpl');
-   }
-
    public function mostrarAgregarVehiculo($vehiculos,$categoria){
      $smarty = new Smarty();
      $smarty->assign('vehiculos',$vehiculos);
@@ -62,6 +55,8 @@
      $smarty->assign('basehref',$this->basehref);
      $smarty->display('templates/show_logIn.tpl');
    }
+
+
 
 }
 

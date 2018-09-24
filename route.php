@@ -1,4 +1,4 @@
-<?php
+      <?php
   require_once 'Controller/paginaController.php';
   require_once 'Controller/LogInController.php';
 
@@ -36,6 +36,22 @@
     case 'IniciarSesion':
       $controller = new paginaController();
       $controller-> getLogin();
+      break;
+    case 'cerrarSesion':
+      $controller = new LogInController();
+      $controller->logOut();
+      break;
+    case 'verificarAdmin':
+      $controller = new LogInController();
+      $controller-> verify();
+      break;
+    case 'admin':
+      $controller = new LogInController();
+      $controller-> getAdmin();
+      break;
+    case 'abmVehiculo':
+      $controller = new LogInController();
+      $controller-> getAdminVehiculos();
       break;
     default:
       $controller = new paginaController();

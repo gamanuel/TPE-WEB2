@@ -7,15 +7,14 @@
         <div class="texto_Nosotros col-md-6 mx-auto mt-5">
           <h1 class="font-weight-normal tituloCategoria">Iniciar Sesion </h1>
           <div class="col-md-12">
-            <form class="col-md-12 mb-2" action="index.html" method="post">
-                <p>Usuario/Mail</p>
-                <input class="col-md-12" type="text" name="" value="">
-                <p>Contraseña</p>
-                <input class="col-md-12" type="text" name="" value="">
+            <form class="col-md-12 mb-2" action="verificarAdmin" method="post">
+                <p class="font-weight-light">Usuario/Mail</p>
+                <input class="col-md-12" type="text" name="email_Iniciar_Sesion" value="">
+                <p class="font-weight-light">Contraseña</p>
+                <input class="col-md-12" type="password" name="contrasenia_Iniciar_Sesion" value="">
                 <div class="mt-1">
-                  <button class="btn btn-warning" type="button" name="button">Ingresar</button>
+                  <button class="btn btn-warning" type="submit" name="button">Ingresar</button>
                 </div>
-
             </form>
           </div>
         </div>

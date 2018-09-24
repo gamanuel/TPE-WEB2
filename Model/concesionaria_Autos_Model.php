@@ -31,7 +31,7 @@ class PaginaModel {
     return $sentencia->fetchAll(PDO::FETCH_OBJ);
   }
 
-  public function getUsers($mail){
+  public function getUser($mail){
     $sentencia = $this->conectarBaseDeDatos->prepare("select * from usuarios WHERE mail = '$mail'");
     $sentencia->execute();
     return $sentencia->fetch(PDO::FETCH_OBJ);

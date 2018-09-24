@@ -2,20 +2,16 @@
 
 require_once 'Controller/Controller.php';
 
-class SecuredController extends Controller  {
+class SecuredController  {
 
     public function __construct() {
         session_start();
     }
 
-    public function autenticado(){
-      if(!isset($_SESSION['USERNAME'])){
-         header('Location: login');
-         die();
-        }
+    public function verificarSesion(){
+      if(!isset($_SESSION['MAIL'])){
+        header('Location: ' .HOME);
+        die();
+      }
     }
-
-
-
-
 }

@@ -18,14 +18,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Inventario <span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Categoria</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="admin/vehiculo">Vehiculo</a>
+          <a class="nav-link" href="abmVehiculo">Vehiculo</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#id_Nosotros">Mensajes</a>

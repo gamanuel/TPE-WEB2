@@ -1,10 +1,11 @@
 <?php
   require_once 'Views/paginaView.php';
+  require_once 'Views/adminView.php';
   require_once 'Model/concesionaria_Autos_Model.php';
-  require_once 'Controller/SecuredController.php';
 
 
-  class paginaController {
+
+  class paginaController{
 
     public function showCategories() {
       $categoriaModel = new PaginaModel();
@@ -58,13 +59,7 @@
     public function getLogin(){
       $view = new ProgramaView();
       $view->mostrarLogIn();
-
     }
-
-
-
-
-
   }
 
 
