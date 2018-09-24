@@ -26,7 +26,7 @@
         <img class="imagen_vehiculo_hover" src="images/3.jpg" alt="">
         <div class="overlay">
           <div class="text ">
-            <button class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg-{$veiculo->id_vehiculo}" type="button">Editar</button>
+            <a href="editarVehiculo/{$vehiculo->id_vehiculo}"><button class="btn btn-success botonEditar" type="button">Editar</button></a>
             <button class="btn btn-danger mt-2 botonBorrar" type="button" name="{$vehiculo->id_vehiculo}" data-name="{$vehiculo->modelo}">Eliminar</button>
           </div>
         </div>

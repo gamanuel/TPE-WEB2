@@ -25,6 +25,12 @@ class PaginaModel {
     return $sentencia->fetch(PDO::FETCH_OBJ);
   }
 
+  public function getDetailVehicle_byid($id){
+    $sentencia = $this->conectarBaseDeDatos->prepare("select * from vehiculo WHERE id_vehiculo = '$id'");
+    $sentencia->execute();
+    return $sentencia->fetch(PDO::FETCH_OBJ);
+  }
+
   public function getVehicle($id){
     $sentencia = $this->conectarBaseDeDatos->prepare("select * from vehiculo WHERE id_categoria = '$id'");
     $sentencia->execute();
@@ -46,6 +52,12 @@ class PaginaModel {
   public function guardarVehiculo($categoria,$modelo,$descripcion,$año,$kilometros,$precio){
     $sentencia = $this->conectarBaseDeDatos->prepare("INSERT INTO vehiculo(modelo,descripcion,anio,kilometros,precio,id_categoria) VALUES(?,?,?,?,?,?)");
     $sentencia->execute(array($modelo,$descripcion,$año,$kilometros,$precio,$categoria));
+
+  }
+
+  public function confirmarEditarVehiculo($id,$categoria,$modelo,$descripcion,$año,$kilometros,$precio){
+    $sentencia = $this->conectarBaseDeDatos->prepare("Update vehiculo SET modelo='$modelo',descripcion='$descripcion',anio='$año',kilometros='$kilometros',precio='$precio',id_categoria='$categoria' where id_vehiculo='$id'");
+    $sentencia->execute();
 
   }
 

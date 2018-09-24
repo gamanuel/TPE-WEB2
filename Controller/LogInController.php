@@ -38,6 +38,13 @@ class LogInController extends Controller {
 
   }
 
+  public function verificarSesion(){
+    if(!isset($_SESSION['MAIL'])){
+      header('Location: ' .HOME);
+      die();
+    }
+  }
+
   public function getLogin(){
     $view = new ProgramaView();
     $view->mostrarLogIn();
@@ -70,16 +77,39 @@ class LogInController extends Controller {
   }
 
   public function deleteVehicles($id_delete){
-    if(!isset($_SESSION['MAIL'])){
-      header('Location: ' .HOME);
-      die();
-    }
-    else {
+    $this->verificarSesion();
+
       $model = new PaginaModel();
       $model->deleteVehiculo($id_delete);
       header('Location:'.HOME.'abmVehiculo');
       die();
-    }
+
   }
+
+  public function editVehicles($id_editar){
+    $this->verificarSesion();
+      $view = new adminView();
+      $model = new PaginaModel();
+      $baseDeDatosCat = $model->getCategories();
+      $editado = $model->getDetailVehicle_byid($id_editar);
+      $view->editarVehiculos($baseDeDatosCat,$editado);
+
+  }
+
+
+  public function confirmEditVehicles(){
+    $id = $_POST['vehiculo_id'];
+    $categoria = $_POST['vehiculo_Categoria'];
+    $modelo = $_POST['vehiculo_Modelo'];
+    $descripcion = $_POST['vehiculo_Descripcion'];
+    $anio = $_POST['vehiculo_Anio'];
+    $kilometros = $_POST['vehiculo_Kilometros'];
+    $precio = $_POST['vehiculo_Precio'];
+    $paginaModel = new PaginaModel();
+    $paginaModel-> confirmarEditarVehiculo($id,$categoria,$modelo,$descripcion,$anio,$kilometros,$precio);
+    header('Location:'.HOME.'abmVehiculo');
+    die();
+  }
+
 
 }

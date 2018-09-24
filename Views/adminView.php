@@ -12,7 +12,7 @@
        $this->basehref = '//'.$_SERVER['SERVER_NAME']
                   .dirname($_SERVER['PHP_SELF']).'/';
 
-      
+
     }
 
     public function mostrarAdmin(){
@@ -29,6 +29,16 @@
       $smarty->assign('categorias',$baseDeDatosCat);
       $smarty->assign('username',$this->mail);
       $smarty->display('templates/agregarVehiculo.tpl');
+
+    }
+
+    public function editarVehiculos($baseDeDatosCat,$editado){
+      $smarty = new Smarty();
+      $smarty->assign('basehref',$this->basehref);
+      $smarty->assign('categorias',$baseDeDatosCat);
+      $smarty->assign('username',$this->mail);
+      $smarty->assign('vehiculo',$editado);
+      $smarty->display('templates/editarVehiculo.tpl');
 
     }
 

@@ -57,6 +57,14 @@
       $controller = new LogInController();
       $controller-> deleteVehicles($partesUrl[VALOR1]);
       break;
+    case 'editarVehiculo':
+      $controller = new LogInController();
+      $controller-> editVehicles($partesUrl[VALOR1]);
+      break;
+    case 'confirmarEditarVehiculo':
+      $controller = new LogInController();
+      $controller-> confirmEditVehicles($partesUrl[VALOR1]);
+      break;
     default:
       $controller = new paginaController();
       $controller->showCategories();
