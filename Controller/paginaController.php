@@ -30,18 +30,6 @@
       $view->mostrarAgregarVehiculo($baseDeDatosAut,$baseDeDatosCat);
     }
 
-    public function showPostVehicle(){
-      $categoria = $_POST['vehiculo_Categoria'];
-      $modelo = $_POST['vehiculo_Modelo'];
-      $descripcion = $_POST['vehiculo_Descripcion'];
-      $anio = $_POST['vehiculo_Anio'];
-      $kilometros = $_POST['vehiculo_Kilometros'];
-      $precio = $_POST['vehiculo_Precio'];
-      $paginaModel = new PaginaModel();
-      $paginaModel-> guardarVehiculo($categoria,$modelo,$descripcion,$anio,$kilometros,$precio);
-
-    }
-
     public function getDetailVehicle($modelo){
       $vehiculo = new PaginaModel();
       $vehiculoID = $vehiculo->getDetailVehicle($modelo);
@@ -56,7 +44,7 @@
       $view->mostrarVehiculos($vehiculos);
     }
 
-    
+
   }
 
 
