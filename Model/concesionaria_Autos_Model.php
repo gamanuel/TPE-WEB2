@@ -52,12 +52,12 @@ class PaginaModel {
   public function guardarVehiculo($categoria,$modelo,$descripcion,$año,$kilometros,$precio){
     $sentencia = $this->conectarBaseDeDatos->prepare("INSERT INTO vehiculo(modelo,descripcion,anio,kilometros,precio,id_categoria) VALUES(?,?,?,?,?,?)");
     $sentencia->execute(array($modelo,$descripcion,$año,$kilometros,$precio,$categoria));
-
+    //$consulta = $this->conectarBaseDeDatos->prepare()
   }
 
   public function confirmarEditarVehiculo($id,$categoria,$modelo,$descripcion,$año,$kilometros,$precio){
-    $sentencia = $this->conectarBaseDeDatos->prepare("Update vehiculo SET modelo='$modelo',descripcion='$descripcion',anio='$año',kilometros='$kilometros',precio='$precio',id_categoria='$categoria' where id_vehiculo='$id'");
-    $sentencia->execute();
+    $sentencia = $this->conectarBaseDeDatos->prepare("UPDATE vehiculo SET modelo=?,descripcion=?,anio=?,kilometros=?,precio=?,id_categoria=? WHERE id_vehiculo=?");
+    $sentencia->execute(array($modelo,$descripcion,$anio,$kilometros,$precio,$categoria,$id));
 
   }
 

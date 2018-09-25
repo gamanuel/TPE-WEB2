@@ -11,7 +11,7 @@
 
        $this->basehref = '//'.$_SERVER['SERVER_NAME']
                   .dirname($_SERVER['PHP_SELF']).'/';
-
+       $this->mail = $_SESSION['MAIL'];
 
     }
 
@@ -29,6 +29,15 @@
       $smarty->assign('categorias',$baseDeDatosCat);
       $smarty->assign('username',$this->mail);
       $smarty->display('templates/agregarVehiculo.tpl');
+
+    }
+
+    public function mostrarAbmCategoria($baseDeDatosCat){
+      $smarty = new Smarty();
+      $smarty->assign('basehref',$this->basehref);
+      $smarty->assign('categorias',$baseDeDatosCat);
+      $smarty->assign('username',$this->mail);
+      $smarty->display('templates/categoriaAdmin.tpl');
 
     }
 

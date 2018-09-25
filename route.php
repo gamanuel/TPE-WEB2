@@ -53,6 +53,10 @@
       $controller = new LogInController();
       $controller-> getAdminVehiculos();
       break;
+    case 'abmCategoria':
+      $controller = new LogInController();
+      $controller-> getAdminCategorias();
+      break;
     case 'borrarVehiculo':
       $controller = new LogInController();
       $controller-> deleteVehicles($partesUrl[VALOR1]);

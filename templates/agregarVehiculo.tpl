@@ -19,7 +19,8 @@
   </div>
 
   <div class="container-fluid row mt-2">
-    <h1 class="font-weight-light tituloCategoria col-md-12 mb-2">Vehiculos</h1> {foreach from=$vehiculos item=vehiculo}
+    <h1 class="font-weight-light tituloCategoria col-md-12 mb-2">Vehiculos</h1>
+    {foreach from=$vehiculos item=vehiculo}
     <div class=" col-md-3">
       <div class="col-md-12 contenedorHover">
         <img class="imagen_vehiculo_hover" src="images/3.jpg" alt="">

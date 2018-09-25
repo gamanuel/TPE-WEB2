@@ -22,13 +22,7 @@
       $view->mostrarVehiculo($baseDeDatosAut);
     }
 
-    public function showAddVehicle() {
-      $categoriaModel = new PaginaModel();
-      $baseDeDatosCat = $categoriaModel->getTabla("categoria");
-      $baseDeDatosAut = $categoriaModel->getVehicles();
-      $view = new ProgramaView();
-      $view->mostrarAgregarVehiculo($baseDeDatosAut,$baseDeDatosCat);
-    }
+    
 
     public function getDetailVehicle($modelo){
       $vehiculo = new PaginaModel();

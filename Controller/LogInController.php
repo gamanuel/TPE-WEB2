@@ -70,11 +70,20 @@ class LogInController extends Controller {
 
   public function getAdminVehiculos(){
     $this->verificarSesion();
-      $view = new adminView();
-      $categoriaModel = new PaginaModel();
-      $baseDeDatosAut = $categoriaModel->getVehicles();
-      $baseDeDatosCat = $categoriaModel->getCategories();
-      $view->mostrarAbmVehiculos($baseDeDatosAut,$baseDeDatosCat);
+    $view = new adminView();
+    $categoriaModel = new PaginaModel();
+    $baseDeDatosAut = $categoriaModel->getVehicles();
+    $baseDeDatosCat = $categoriaModel->getCategories();
+    $view->mostrarAbmVehiculos($baseDeDatosAut,$baseDeDatosCat);
+
+  }
+
+  public function getAdminCategorias(){
+    $this->verificarSesion();
+    $view = new adminView();
+    $categoriaModel = new PaginaModel();
+    $baseDeDatosCat = $categoriaModel->getCategories();
+    $view->mostrarAbmCategoria($baseDeDatosCat);
 
   }
 
@@ -95,21 +104,20 @@ class LogInController extends Controller {
 
   public function deleteVehicles($id_delete){
     $this->verificarSesion();
-
-      $model = new PaginaModel();
-      $model->deleteVehiculo($id_delete);
-      header('Location:'.HOME.'abmVehiculo');
-      die();
+    $model = new PaginaModel();
+    $model->deleteVehiculo($id_delete);
+    header('Location:'.HOME.'abmVehiculo');
+    die();
 
   }
 
   public function editVehicles($id_editar){
     $this->verificarSesion();
-      $view = new adminView();
-      $model = new PaginaModel();
-      $baseDeDatosCat = $model->getCategories();
-      $editado = $model->getDetailVehicle_byid($id_editar);
-      $view->editarVehiculos($baseDeDatosCat,$editado);
+    $view = new adminView();
+    $model = new PaginaModel();
+    $baseDeDatosCat = $model->getCategories();
+    $editado = $model->getDetailVehicle_byid($id_editar);
+    $view->editarVehiculos($baseDeDatosCat,$editado);
 
   }
 
