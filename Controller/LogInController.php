@@ -34,6 +34,11 @@ class LogInController extends Controller {
             $mostrarError = $viewPagina->mostrarLogIn("Usuario o contraseña incorrecta");
            }
        }
+       else {
+        $viewPagina = new ProgramaView();
+        $mostrarError = $viewPagina->mostrarLogIn("Usuario o contraseña incorrecta");
+       }
+
 
 
   }
@@ -51,6 +56,7 @@ class LogInController extends Controller {
   }
 
   public function getAdmin(){
+    $this->verificarSesion();
     $view = new adminView();
     $view->mostrarAdmin();
   }
@@ -63,17 +69,28 @@ class LogInController extends Controller {
   }
 
   public function getAdminVehiculos(){
-    if(!isset($_SESSION['MAIL'])){
-      header('Location: ' .HOME);
-      die();
-    }
-    else {
+    $this->verificarSesion();
       $view = new adminView();
       $categoriaModel = new PaginaModel();
       $baseDeDatosAut = $categoriaModel->getVehicles();
       $baseDeDatosCat = $categoriaModel->getCategories();
       $view->mostrarAbmVehiculos($baseDeDatosAut,$baseDeDatosCat);
-    }
+
+  }
+
+  public function showPostVehicle(){
+    $this->verificarSesion();
+    $categoria = $_POST['vehiculo_Categoria'];
+    $modelo = $_POST['vehiculo_Modelo'];
+    $descripcion = $_POST['vehiculo_Descripcion'];
+    $anio = $_POST['vehiculo_Anio'];
+    $kilometros = $_POST['vehiculo_Kilometros'];
+    $precio = $_POST['vehiculo_Precio'];
+    $paginaModel = new PaginaModel();
+    $paginaModel-> guardarVehiculo($categoria,$modelo,$descripcion,$anio,$kilometros,$precio);
+    header('Location: abmVehiculo');
+    die();
+
   }
 
   public function deleteVehicles($id_delete){

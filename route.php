@@ -18,7 +18,7 @@
 
   switch ($partesUrl[ACTION]) {
     case 'guardarVehiculo':
-      $controller = new paginaController();
+      $controller = new LogInController();
       $controller->showPostVehicle();
       break;
     case 'categoria':
