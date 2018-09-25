@@ -4,7 +4,7 @@ class PaginaModel {
   private $conectarBaseDeDatos;
 
   function __construct(){
-    $this->conectarBaseDeDatos = new PDO('mysql:host=localhost;'.'dbname=concesionaria_autos;charset=utf8','root','');
+    $this->conectarBaseDeDatos = new PDO('mysql:host=localhost;'.'dbname=concesionaria_autos;charset=utf8','root','worksidll32');
   }
 
   public function getCategories(){

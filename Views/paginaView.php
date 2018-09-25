@@ -18,7 +18,11 @@
        $smarty->assign('baseDeDatosCat',$baseDeDatosCat);
        $smarty->assign('baseDeDatosAut',$baseDeDatosAut);
        $smarty->assign('basehref',$this->basehref);
+
+             echo "hola route";
        $smarty->display('templates/index.tpl');
+
+             echo "hola route4";
      }
 
    public function mostrarVehiculo($baseDeDatosAut){
