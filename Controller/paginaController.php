@@ -8,11 +8,16 @@
   class paginaController{
 
     public function showCategories() {
+
       $categoriaModel = new PaginaModel();
       $baseDeDatosCat = $categoriaModel->getTabla("categoria");
       $baseDeDatosAut = $categoriaModel->getVehicles();
       $view = new ProgramaView();
+
+            echo "hola route1";
       $view->mostrarCategorias($baseDeDatosCat, $baseDeDatosAut);
+
+            echo "hola route2";
     }
 
     public function showVehicles() {
@@ -56,7 +61,7 @@
       $view->mostrarVehiculos($vehiculos);
     }
 
-    
+
   }
 
 
