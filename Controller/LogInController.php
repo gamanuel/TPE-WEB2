@@ -152,5 +152,13 @@ class LogInController extends Controller {
     header('Location:'.HOME.'abmCategoria');
   }
 
+  public function getCategorie(){
+    $this->verificarSesion();
+    $nombre = $_POST['categoria_Nombre'];
+    $model = new paginaModel();
+    $model->guardarCategoria($nombre);
+    header('Location:'.HOME.'abmCategoria');
+  }
+
 
 }

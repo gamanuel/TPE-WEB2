@@ -4,8 +4,8 @@
   <div class="coontainer-fluid">
     <h1 class="font-weight-light tituloCategoria">Agregar Categoria</h1>
     <div class="container-fluid">
-      <form class="row" action="guardarVehiculo" method="POST">
-        <input class="form-control col-md-10 mr-1" stype="text" name="vehiculo_Modelo" value="" placeholder="Categoria">
+      <form class="row" action="guardarCategoria" method="POST">
+        <input class="form-control col-md-10 mr-1" stype="text" name="categoria_Nombre" value="" placeholder="Categoria">
         <button class="btn btn-success btn-sm col-md-1" type="submit" name="button">Guardar</button>
       </form>
     </div>

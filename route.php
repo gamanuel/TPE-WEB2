@@ -73,6 +73,10 @@
       $controller = new LogInController();
       $controller-> confirmEditCategorie();
       break;
+    case 'guardarCategoria':
+      $controller = new LogInController();
+      $controller->getCategorie();
+      break;
     default:
       $controller = new paginaController();
       $controller->showCategories();

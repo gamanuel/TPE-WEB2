@@ -78,6 +78,11 @@ class PaginaModel {
     $sentencia->execute(array($nombre_Categoria,$id));
   }
 
+  public function guardarCategoria($nombre){
+    $sentencia = $this->conectarBaseDeDatos->prepare("INSERT INTO categoria (Nombre) VALUES(?)");
+    $sentencia->execute(array($nombre));
+  }
+
 }
 
 
