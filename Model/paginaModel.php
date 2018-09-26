@@ -20,13 +20,13 @@ class PaginaModel {
   }
 
   public function getDetailVehicle($modelo){
-    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * from vehiculo WHERE modelo = '$modelo'");
+    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT modelo,descripcion,anio,kilometros,precio,vehiculo.id_categoria,Nombre from vehiculo,categoria WHERE vehiculo.id_categoria = categoria.id_categoria AND modelo = '$modelo'");
     $sentencia->execute();
     return $sentencia->fetch(PDO::FETCH_OBJ);
   }
 
   public function getDetailVehicle_byid($id){
-    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * from vehiculo WHERE id_vehiculo = '$id'");
+    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * from vehiculo WHERE  id_vehiculo = '$id'");
     $sentencia->execute();
     return $sentencia->fetch(PDO::FETCH_OBJ);
   }

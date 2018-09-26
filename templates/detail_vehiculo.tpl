@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="tituloCategoria col-md-12">
-      <h1 class="font-weight-light">{$vehiculo->modelo}</h1>
+      <h1 class="font-weight-light">{$vehiculo->Nombre} - {$vehiculo->modelo}</h1>
       </div>
       <div class="col-md-6">
         <div class="row mt-1">
