@@ -1,7 +1,7 @@
 <?php
   require_once 'Views/paginaView.php';
   require_once 'Views/adminView.php';
-  require_once 'Model/concesionaria_Autos_Model.php';
+  require_once 'Model/paginaModel.php';
 
 
 
@@ -14,10 +14,10 @@
       $baseDeDatosAut = $categoriaModel->getVehicles();
       $view = new ProgramaView();
 
-            echo "hola route1";
+
       $view->mostrarCategorias($baseDeDatosCat, $baseDeDatosAut);
 
-            echo "hola route2";
+
     }
 
     public function showVehicles() {
@@ -27,7 +27,7 @@
       $view->mostrarVehiculo($baseDeDatosAut);
     }
 
-    
+
 
     public function getDetailVehicle($modelo){
       $vehiculo = new PaginaModel();

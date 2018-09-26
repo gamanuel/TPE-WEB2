@@ -3,17 +3,17 @@
   <div class="container-fluid">
     <h1 class="font-weight-light tituloCategoria">Agregar vehiculo</h1>
     <form class="row" action="guardarVehiculo" method="POST">
-      <select class="form-control col-md-12 ml-1" name="vehiculo_Categoria">
-        <option value="-1">Categoria</option>
+      <select class="form-control col-md-12 ml-1" name="vehiculo_Categoria" required>
+        <option value="">Categoria</option>
         {foreach from=$categorias item=categoria}
           <option value="{$categoria->id_categoria}">{$categoria->Nombre}</option>
         {/foreach}
       </select>
-      <input class="form-control col-md-2 mr-1 mt-1 ml-1" type="text" name="vehiculo_Modelo" value="" placeholder="Modelo">
-      <input class="form-control col-md-2 mr-1 mt-1" type="text" name="vehiculo_Descripcion" value="" placeholder="Descripcion">
-      <input class="form-control col-md-2 mr-1 mt-1" type="number" name="vehiculo_Anio" value="" placeholder="Año">
-      <input class="form-control col-md-2 mr-1 mt-1" type="number" name="vehiculo_Kilometros" value="" placeholder="Kilometros">
-      <input class="form-control col-md-2 mr-1 mt-1" type="number" name="vehiculo_Precio" value="" placeholder="Precio $0.00">
+      <input class="form-control col-md-2 mr-1 mt-1 ml-1" type="text" name="vehiculo_Modelo" value="" placeholder="Modelo" required>
+      <input class="form-control col-md-2 mr-1 mt-1" type="text" name="vehiculo_Descripcion" value="" placeholder="Descripcion" required>
+      <input class="form-control col-md-2 mr-1 mt-1" type="number" name="vehiculo_Anio" value="" placeholder="Año" required>
+      <input class="form-control col-md-2 mr-1 mt-1" type="number" name="vehiculo_Kilometros" value="" placeholder="Kilometros" required>
+      <input class="form-control col-md-2 mr-1 mt-1" type="number" name="vehiculo_Precio" value="" placeholder="Precio $0.00" required>
       <button class="btn btn-success btn-sm mt-1" type="submit" name="button">Guardar</button>
     </form>
   </div>

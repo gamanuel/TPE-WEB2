@@ -65,6 +65,14 @@
       $controller = new LogInController();
       $controller-> confirmEditVehicles($partesUrl[VALOR1]);
       break;
+    case 'editarCategoria':
+      $controller = new LogInController();
+      $controller-> editCategorie($partesUrl[VALOR1]);
+      break;
+    case 'confirmarEditarCategoria':
+      $controller = new LogInController();
+      $controller-> confirmEditCategorie();
+      break;
     default:
       $controller = new paginaController();
       $controller->showCategories();

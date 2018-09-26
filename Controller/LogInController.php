@@ -2,7 +2,7 @@
 
 require_once 'Views/adminView.php';
 require_once 'Views/paginaView.php';
-require_once 'Model/concesionaria_Autos_Model.php';
+require_once 'Model/paginaModel.php';
 require_once  'Controller/Controller.php';
 
 
@@ -19,7 +19,6 @@ class LogInController extends Controller {
     $mail = $_POST['email_Iniciar_Sesion'];
     $password = $_POST['contrasenia_Iniciar_Sesion'];
     $model = new PaginaModel();
-    $viewAdmin = new adminView();
 
     if(!empty($mail) && !empty($password)){
            $user = $model->getUser($mail);
@@ -134,6 +133,23 @@ class LogInController extends Controller {
     $paginaModel-> confirmarEditarVehiculo($id,$categoria,$modelo,$descripcion,$anio,$kilometros,$precio);
     header('Location:'.HOME.'abmVehiculo');
     die();
+  }
+
+  public function editCategorie($id_Categoria){
+    $this->verificarSesion();
+    $view = new adminView();
+    $model  = new PaginaModel();
+    $baseDeDatosCat = $model->getDetailCategorie_byid($id_Categoria);
+    $view->editarCategoria($baseDeDatosCat);
+  }
+
+  public function confirmEditCategorie(){
+    $this->verificarSesion();
+    $categoria = $_POST['nombre_Categoria'];
+    $id_categ = $_POST['categoria_id'];
+    $model = new PaginaModel();
+    $model-> confirmarEditarCategoria($id_categ,$categoria);
+    header('Location:'.HOME.'abmCategoria');
   }
 
 

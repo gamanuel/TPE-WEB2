@@ -1,5 +1,5 @@
 <?php
-  require_once 'Model/concesionaria_Autos_Model.php';
+  require_once 'Model/paginaModel.php';
   require_once "libs/Smarty.class.php";
 
   class ProgramaView {
@@ -18,11 +18,9 @@
        $smarty->assign('baseDeDatosCat',$baseDeDatosCat);
        $smarty->assign('baseDeDatosAut',$baseDeDatosAut);
        $smarty->assign('basehref',$this->basehref);
-
-             echo "hola route";
        $smarty->display('templates/index.tpl');
 
-             echo "hola route4";
+
      }
 
    public function mostrarVehiculo($baseDeDatosAut){

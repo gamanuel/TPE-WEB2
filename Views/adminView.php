@@ -1,5 +1,5 @@
 <?php
-  require_once 'Model/concesionaria_Autos_Model.php';
+  require_once 'Model/paginaModel.php';
   require_once "libs/Smarty.class.php";
 
   class adminView {
@@ -14,6 +14,8 @@
        $this->mail = $_SESSION['MAIL'];
 
     }
+
+    
 
     public function mostrarAdmin(){
       $smarty = new Smarty();
@@ -48,6 +50,15 @@
       $smarty->assign('username',$this->mail);
       $smarty->assign('vehiculo',$editado);
       $smarty->display('templates/editarVehiculo.tpl');
+
+    }
+
+    public function editarCategoria($baseDeDatosCat){
+      $smarty = new Smarty();
+      $smarty->assign('basehref',$this->basehref);
+      $smarty->assign('categoria',$baseDeDatosCat);
+      $smarty->assign('username',$this->mail);
+      $smarty->display('templates/editarCategoria.tpl');
 
     }
 

@@ -28,6 +28,23 @@
       {/foreach}
     </div>
   </div>
+
+  <div id="myModal" class="modal_Confirma_Cancela">
+
+    <!-- Modal content -->
+    <div class="modal_Confirma_Cancela_content">
+      <span class="modal_Confirma_Cancela_close">&times;</span>
+      <p>¿Esta Seguro de Eliminar <span id="que_borro"></span>?</p>
+      <div class="">
+        <a class="" href="" id="btn_Czonfirmar"><button class="btn btn-success" type="button">Confirmar</button></a>
+        <a><button class="btn btn-primary botonBorrar modal_Confirma_Cancela_close" type="button">Cancelar</button></a>
+
+      </div>
+    </div>
+
+  </div>
+
+
 </div>
 
 
