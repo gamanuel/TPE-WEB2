@@ -1,8 +1,8 @@
 <?php
-  require_once 'Model/paginaModel.php';
+  require_once 'Model/PaginaModel.php';
   require_once "libs/Smarty.class.php";
 
-  class ProgramaView {
+  class UsuarioView {
 
     private $basehref;
 

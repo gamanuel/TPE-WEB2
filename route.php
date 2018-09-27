@@ -1,5 +1,5 @@
         <?php
-  require_once 'Controller/paginaController.php';
+  require_once 'Controller/PaginaController.php';
   require_once 'Controller/LogInController.php';
 
   define('ACTION',0);
@@ -22,15 +22,15 @@
       $controller->showPostVehicle();
       break;
     case 'categoria':
-      $controller = new paginaController();
+      $controller = new PaginaController();
       $controller->getVehicles($partesUrl[VALOR1]);
       break;
     case 'vehiculo':
-      $controller = new paginaController();
+      $controller = new PaginaController();
       $controller->getDetailVehicle($partesUrl[VALOR1]);
       break;
     case 'IniciarSesion':
-      $controller = new paginaController();
+      $controller = new PaginaController();
       $controller-> getLogin();
       break;
     case 'cerrarSesion':
@@ -78,7 +78,7 @@
       $controller->getCategorie();
       break;
     default:
-      $controller = new paginaController();
+      $controller = new PaginaController();
       $controller->showCategories();
       break;
   }

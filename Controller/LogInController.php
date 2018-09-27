@@ -1,8 +1,8 @@
 <?php
 
-require_once 'Views/adminView.php';
-require_once 'Views/paginaView.php';
-require_once 'Model/paginaModel.php';
+require_once 'Views/AdminView.php';
+require_once 'Views/UsuarioView.php';
+require_once 'Model/PaginaModel.php';
 require_once  'Controller/Controller.php';
 
 class LogInController extends Controller {
@@ -10,8 +10,8 @@ class LogInController extends Controller {
   public function __construct() {
     parent::__construct();
     $this->model = new PaginaModel();
-    $this->viewAdmin= new adminView();
-    $this->view= new ProgramaView();
+    $this->viewAdmin= new AdminView();
+    $this->view= new UsuarioView();
     //session_start();
   }
 
