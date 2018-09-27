@@ -5,23 +5,23 @@ require_once 'Views/paginaView.php';
 require_once 'Model/paginaModel.php';
 require_once  'Controller/Controller.php';
 
-
-
-
 class LogInController extends Controller {
 
   public function __construct() {
-    session_start();
+    parent::__construct();
+    $this->model = new PaginaModel();
+    $this->viewAdmin= new adminView();
+    $this->view= new ProgramaView();
+    //session_start();
   }
 
 
   public function verify(){
     $mail = $_POST['email_Iniciar_Sesion'];
     $password = $_POST['contrasenia_Iniciar_Sesion'];
-    $model = new PaginaModel();
 
     if(!empty($mail) && !empty($password)){
-           $user = $model->getUser($mail);
+           $user = $this->model->getUser($mail);
            if((!empty($user)) && password_verify($password, $user->contrasenia)) {
                session_start();
                $_SESSION['MAIL'] = $mail;
@@ -29,17 +29,14 @@ class LogInController extends Controller {
                die();
            }
            else {
-            $viewPagina = new ProgramaView();
-            $mostrarError = $viewPagina->mostrarLogIn("Usuario o contraseña incorrecta");
+            $mostrarError = $this->view->mostrarLogIn("Usuario o contraseña incorrecta");
+            die();
            }
        }
        else {
-        $viewPagina = new ProgramaView();
-        $mostrarError = $viewPagina->mostrarLogIn("Usuario o contraseña incorrecta");
+        $mostrarError = $this->view->mostrarLogIn("Usuario o contraseña incorrecta");
+        die();
        }
-
-
-
   }
 
   public function verificarSesion(){
@@ -49,15 +46,9 @@ class LogInController extends Controller {
     }
   }
 
-  public function getLogin(){
-    $view = new ProgramaView();
-    $view->mostrarLogIn();
-  }
-
   public function getAdmin(){
     $this->verificarSesion();
-    $view = new adminView();
-    $view->mostrarAdmin();
+    $this->viewAdmin->mostrarAdmin();
   }
 
   public function logOut(){
@@ -69,20 +60,15 @@ class LogInController extends Controller {
 
   public function getAdminVehiculos(){
     $this->verificarSesion();
-    $view = new adminView();
-    $categoriaModel = new PaginaModel();
-    $baseDeDatosAut = $categoriaModel->getVehicles();
-    $baseDeDatosCat = $categoriaModel->getCategories();
-    $view->mostrarAbmVehiculos($baseDeDatosAut,$baseDeDatosCat);
-
+    $baseDeDatosAut = $this->model->getVehicles();
+    $baseDeDatosCat = $this->model->getCategories();
+    $this->viewAdmin->mostrarAbmVehiculos($baseDeDatosAut,$baseDeDatosCat);
   }
 
   public function getAdminCategorias(){
     $this->verificarSesion();
-    $view = new adminView();
-    $categoriaModel = new PaginaModel();
-    $baseDeDatosCat = $categoriaModel->getCategories();
-    $view->mostrarAbmCategoria($baseDeDatosCat);
+    $baseDeDatosCat = $this->model->getCategories();
+    $this->viewAdmin->mostrarAbmCategoria($baseDeDatosCat);
 
   }
 
@@ -94,8 +80,7 @@ class LogInController extends Controller {
     $anio = $_POST['vehiculo_Anio'];
     $kilometros = $_POST['vehiculo_Kilometros'];
     $precio = $_POST['vehiculo_Precio'];
-    $paginaModel = new PaginaModel();
-    $paginaModel-> guardarVehiculo($categoria,$modelo,$descripcion,$anio,$kilometros,$precio);
+    $this->model-> guardarVehiculo($categoria,$modelo,$descripcion,$anio,$kilometros,$precio);
     header('Location: abmVehiculo');
     die();
 
@@ -103,8 +88,7 @@ class LogInController extends Controller {
 
   public function deleteVehicles($id_delete){
     $this->verificarSesion();
-    $model = new PaginaModel();
-    $model->deleteVehiculo($id_delete);
+    $this->model->deleteVehiculo($id_delete);
     header('Location:'.HOME.'abmVehiculo');
     die();
 
@@ -112,11 +96,9 @@ class LogInController extends Controller {
 
   public function editVehicles($id_editar){
     $this->verificarSesion();
-    $view = new adminView();
-    $model = new PaginaModel();
-    $baseDeDatosCat = $model->getCategories();
-    $editado = $model->getDetailVehicle_byid($id_editar);
-    $view->editarVehiculos($baseDeDatosCat,$editado);
+    $baseDeDatosCat = $this->model->getCategories();
+    $editado = $this->model->getDetailVehicle_byid($id_editar);
+    $this->viewAdmin->editarVehiculos($baseDeDatosCat,$editado);
 
   }
 
@@ -129,34 +111,29 @@ class LogInController extends Controller {
     $anio = $_POST['vehiculo_Anio'];
     $kilometros = $_POST['vehiculo_Kilometros'];
     $precio = $_POST['vehiculo_Precio'];
-    $paginaModel = new PaginaModel();
-    $paginaModel-> confirmarEditarVehiculo($id,$categoria,$modelo,$descripcion,$anio,$kilometros,$precio);
+    $this->model-> confirmarEditarVehiculo($id,$categoria,$modelo,$descripcion,$anio,$kilometros,$precio);
     header('Location:'.HOME.'abmVehiculo');
     die();
   }
 
   public function editCategorie($id_Categoria){
     $this->verificarSesion();
-    $view = new adminView();
-    $model  = new PaginaModel();
-    $baseDeDatosCat = $model->getDetailCategorie_byid($id_Categoria);
-    $view->editarCategoria($baseDeDatosCat);
+    $baseDeDatosCat = $this->model->getDetailCategorie_byid($id_Categoria);
+    $this->viewAdmin->editarCategoria($baseDeDatosCat);
   }
 
   public function confirmEditCategorie(){
     $this->verificarSesion();
     $categoria = $_POST['nombre_Categoria'];
     $id_categ = $_POST['categoria_id'];
-    $model = new PaginaModel();
-    $model-> confirmarEditarCategoria($id_categ,$categoria);
+    $this->model-> confirmarEditarCategoria($id_categ,$categoria);
     header('Location:'.HOME.'abmCategoria');
   }
 
   public function getCategorie(){
     $this->verificarSesion();
     $nombre = $_POST['categoria_Nombre'];
-    $model = new paginaModel();
-    $model->guardarCategoria($nombre);
+    $this->model->guardarCategoria($nombre);
     header('Location:'.HOME.'abmCategoria');
   }
 

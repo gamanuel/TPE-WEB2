@@ -1,4 +1,4 @@
-      <?php
+        <?php
   require_once 'Controller/paginaController.php';
   require_once 'Controller/LogInController.php';
 
@@ -30,7 +30,7 @@
       $controller->getDetailVehicle($partesUrl[VALOR1]);
       break;
     case 'IniciarSesion':
-      $controller = new LogInController();
+      $controller = new paginaController();
       $controller-> getLogin();
       break;
     case 'cerrarSesion':

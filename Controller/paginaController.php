@@ -2,52 +2,39 @@
   require_once 'Views/paginaView.php';
   require_once 'Views/adminView.php';
   require_once 'Model/paginaModel.php';
+  require_once 'Controller/Controller.php';
 
+  class paginaController extends Controller{
 
-
-  class paginaController{
+    public function __construct(){
+      parent::__construct();
+      $this->view = new ProgramaView();
+      $this->model = new PaginaModel();
+    }
 
     public function showCategories() {
-
-      $categoriaModel = new PaginaModel();
-      $baseDeDatosCat = $categoriaModel->getTabla("categoria");
-      $baseDeDatosAut = $categoriaModel->getVehicles();
-      $view = new ProgramaView();
-
-
-      $view->mostrarCategorias($baseDeDatosCat, $baseDeDatosAut);
-
-
+      $baseDeDatosCat = $this->model->getTabla("categoria");
+      $baseDeDatosAut = $this->model->getVehicles();
+      $this->view->mostrarCategorias($baseDeDatosCat, $baseDeDatosAut);
     }
 
     public function showVehicles() {
-      $categoriaModel = new PaginaModel();
-      $baseDeDatosAut = $categoriaModel->getVehicles();
-      $view = new ProgramaView();
-      $view->mostrarVehiculo($baseDeDatosAut);
+      $baseDeDatosAut = $this->model->getVehicles();
+      $this->view->mostrarVehiculo($baseDeDatosAut);
     }
 
-
-
     public function getDetailVehicle($modelo){
-      $vehiculo = new PaginaModel();
-      $vehiculoID = $vehiculo->getDetailVehicle($modelo);
-      $view = new ProgramaView();
-      $view->mostrarDetalleVehiculo($vehiculoID);
+      $vehiculoID = $this->model->getDetailVehicle($modelo);
+      $this->view->mostrarDetalleVehiculo($vehiculoID);
     }
 
     public function getVehicles($id){
-      $vehiculo_Categoria = new PaginaModel();
-      $vehiculos = $vehiculo_Categoria->getVehicle($id);
-      $view = new ProgramaView();
-      $view->mostrarVehiculos($vehiculos);
+      $vehiculos = $this->model->getVehicle($id);
+      $this->view->mostrarVehiculos($vehiculos);
     }
 
+    public function getLogin(){
+      $this->view->mostrarLogIn();
+    }
 
   }
-
-
-
-
-
-?>
