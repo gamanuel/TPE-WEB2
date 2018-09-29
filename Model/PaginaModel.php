@@ -8,43 +8,43 @@ class PaginaModel {
   }
 
   public function getCategories(){
-    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * from categoria order by Nombre");
+    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * FROM categoria ORDER BY Nombre");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_OBJ);
   }
 
   public function getVehicles(){
-    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * from vehiculo");
+    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * FROM vehiculo");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_OBJ);
   }
 
   public function getDetailVehicle($modelo){
-    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT modelo,descripcion,anio,kilometros,precio,vehiculo.id_categoria,Nombre from vehiculo,categoria WHERE vehiculo.id_categoria = categoria.id_categoria AND modelo = '$modelo'");
+    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT modelo,descripcion,anio,kilometros,precio,vehiculo.id_categoria,Nombre FROM vehiculo,categoria WHERE vehiculo.id_categoria = categoria.id_categoria AND modelo = '$modelo'");
     $sentencia->execute();
     return $sentencia->fetch(PDO::FETCH_OBJ);
   }
 
   public function getDetailVehicle_byid($id){
-    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * from vehiculo WHERE  id_vehiculo = '$id'");
-    $sentencia->execute();
+    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * FROM vehiculo WHERE  id_vehiculo = ?");
+    $sentencia->execute(array($id));
     return $sentencia->fetch(PDO::FETCH_OBJ);
   }
 
   public function getVehicle($id){
-    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * from vehiculo WHERE id_categoria = '$id'");
-    $sentencia->execute();
+    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * FROM vehiculo WHERE id_categoria = ?");
+    $sentencia->execute(array($id));
     return $sentencia->fetchAll(PDO::FETCH_OBJ);
   }
 
   public function getUser($mail){
-    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * from usuarios WHERE mail = '$mail'");
-    $sentencia->execute();
+    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * FROM usuarios WHERE mail = ?");
+    $sentencia->execute(array($mail));
     return $sentencia->fetch(PDO::FETCH_OBJ);
   }
 
   public function getTabla($laTabla){
-    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * from $laTabla");
+    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * FROM $laTabla");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_OBJ);
   }
@@ -62,14 +62,14 @@ class PaginaModel {
   }
 
   public function deleteVehiculo($id){
-    $sentencia = $this->conectarBaseDeDatos->prepare("DELETE from vehiculo WHERE id_vehiculo = '$id'");
-    $sentencia->execute();
+    $sentencia = $this->conectarBaseDeDatos->prepare("DELETE FROM vehiculo WHERE id_vehiculo = ?");
+    $sentencia->execute(array($id));
 
   }
 
   public function getDetailCategorie_byid($id){
-    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * from categoria WHERE id_categoria = '$id'");
-    $sentencia->execute();
+    $sentencia = $this->conectarBaseDeDatos->prepare("SELECT * FROM categoria WHERE id_categoria = ?");
+    $sentencia->execute(array($id));
     return $sentencia->fetch(PDO::FETCH_OBJ);
   }
 
@@ -84,8 +84,8 @@ class PaginaModel {
   }
 
   public function deleteCategorie($id){
-    $sentencia = $this->conectarBaseDeDatos->prepare("DELETE from categoria WHERE id_categoria ='$id'");
-    $sentencia->execute();
+    $sentencia = $this->conectarBaseDeDatos->prepare("DELETE FROM categoria WHERE id_categoria =?");
+    $sentencia->execute(array($id));
   }
 
 }
