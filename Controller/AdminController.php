@@ -89,5 +89,11 @@ class adminController extends SecuredController {
     header('Location:'.HOME.'abmCategoria');
   }
 
+  public function deleteCategorie($id){
+    $this->model->deleteCategorie($id);
+    header('Location:'.HOME.'abmCategoria');
+    die();
+  }
+
 }
 ?>

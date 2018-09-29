@@ -83,6 +83,11 @@ class PaginaModel {
     $sentencia->execute(array($nombre));
   }
 
+  public function deleteCategorie($id){
+    $sentencia = $this->conectarBaseDeDatos->prepare("DELETE from categoria WHERE id_categoria ='$id'");
+    $sentencia->execute();
+  }
+
 }
 
 

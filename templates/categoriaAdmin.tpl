@@ -19,7 +19,7 @@
           <div class="overlay">
             <div class="text ">
               <a href="editarCategoria/{$categoria->id_categoria}"><button class="btn btn-success botonEditar" type="button">Editar</button></a>
-              <button class="btn btn-danger mt-2 botonBorrar" type="button" name="{$vehiculo->id_vehiculo}" data-name="{$vehiculo->modelo}">Eliminar</button>
+              <button class="btn btn-danger mt-2 botonBorrarCat" type="button" name="{$categoria->id_categoria}" data-name="{$categoria->Nombre}">Eliminar</button>
             </div>
           </div>
         </div>
@@ -29,14 +29,14 @@
     </div>
   </div>
 
-  <div id="myModal" class="modal_Confirma_Cancela">
+  <div id="myModalCat" class="modal_Confirma_Cancela">
 
     <!-- Modal content -->
     <div class="modal_Confirma_Cancela_content">
       <span class="modal_Confirma_Cancela_close">&times;</span>
-      <p>¿Esta Seguro de Eliminar <span id="que_borro"></span>?</p>
+      <p>¿Esta Seguro de Eliminar <span id="que_borroCat"></span>?</p>
       <div class="">
-        <a class="" href="" id="btn_Czonfirmar"><button class="btn btn-success" type="button">Confirmar</button></a>
+        <a class="" href="" id="btn_ConfirmarCat"><button class="btn btn-success" type="button">Confirmar</button></a>
         <a><button class="btn btn-primary botonBorrar modal_Confirma_Cancela_close" type="button">Cancelar</button></a>
 
       </div>

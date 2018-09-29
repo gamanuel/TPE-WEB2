@@ -78,6 +78,10 @@
       $controller = new adminController();
       $controller->getCategorie();
       break;
+    case 'borrarCategoria':
+      $controller = new adminController();
+      $controller->deleteCategorie($partesUrl[VALOR1]);
+      break;
     default:
       $controller = new PaginaController();
       $controller->showCategories();
