@@ -1,6 +1,7 @@
-        <?php
+  <?php
   require_once 'Controller/PaginaController.php';
   require_once 'Controller/LogInController.php';
+  require_once 'Controller/AdminController.php';
 
   define('ACTION',0);
   define('VALOR1',1);
@@ -18,7 +19,7 @@
 
   switch ($partesUrl[ACTION]) {
     case 'guardarVehiculo':
-      $controller = new LogInController();
+      $controller = new adminController();
       $controller->showPostVehicle();
       break;
     case 'categoria':
@@ -42,39 +43,39 @@
       $controller-> verify();
       break;
     case 'admin':
-      $controller = new LogInController();
+      $controller = new adminController();
       $controller-> getAdmin();
       break;
     case 'abmVehiculo':
-      $controller = new LogInController();
+      $controller = new adminController();
       $controller-> getAdminVehiculos();
       break;
     case 'abmCategoria':
-      $controller = new LogInController();
+      $controller = new adminController();
       $controller-> getAdminCategorias();
       break;
     case 'borrarVehiculo':
-      $controller = new LogInController();
+      $controller = new adminController();
       $controller-> deleteVehicles($partesUrl[VALOR1]);
       break;
     case 'editarVehiculo':
-      $controller = new LogInController();
+      $controller = new adminController();
       $controller-> editVehicles($partesUrl[VALOR1]);
       break;
     case 'confirmarEditarVehiculo':
-      $controller = new LogInController();
+      $controller = new adminController();
       $controller-> confirmEditVehicles($partesUrl[VALOR1]);
       break;
     case 'editarCategoria':
-      $controller = new LogInController();
+      $controller = new adminController();
       $controller-> editCategorie($partesUrl[VALOR1]);
       break;
     case 'confirmarEditarCategoria':
-      $controller = new LogInController();
+      $controller = new adminController();
       $controller-> confirmEditCategorie();
       break;
     case 'guardarCategoria':
-      $controller = new LogInController();
+      $controller = new adminController();
       $controller->getCategorie();
       break;
     default:
