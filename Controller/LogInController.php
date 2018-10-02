@@ -2,7 +2,7 @@
 
 require_once 'Views/UsuarioView.php';
 require_once 'Model/PaginaModel.php';
-require_once  'Controller/Controller.php';
+require_once 'Controller/Controller.php';
 
 class LogInController extends Controller {
 

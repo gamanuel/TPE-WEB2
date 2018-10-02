@@ -9,13 +9,12 @@
 
     public function __construct() {
 
-       $this->basehref = '//'.$_SERVER['SERVER_NAME']
-                  .dirname($_SERVER['PHP_SELF']).'/';
+       $this->basehref = '//'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/';
        $this->mail = $_SESSION['MAIL'];
 
     }
 
-    
+
 
     public function mostrarAdmin(){
       $smarty = new Smarty();
