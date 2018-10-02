@@ -64,7 +64,7 @@
       break;
     case 'confirmarEditarVehiculo':
       $controller = new adminController();
-      $controller-> confirmEditVehicles($partesUrl[VALOR1]);
+      $controller-> confirmEditVehicles();
       break;
     case 'editarCategoria':
       $controller = new adminController();

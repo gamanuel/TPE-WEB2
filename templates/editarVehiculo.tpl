@@ -66,20 +66,7 @@
       <button class=" col-md-6 btn btn-success btn-large mt-1" type="submit" name="button">Editar</button>
       <a href="abmVehiculo"><button class=" col-md-5 btn btn-primary btn-large mt-1" type="button">Cancelar</button></a>
   </form>
-  <div class="col-md-6">
-    <div class="container kv-main">
-        <div class="page-header">
-            <h1>Subir archivos
-                <small><a href="https://github.com/kartik-v/bootstrap-fileinput-samples"><i
-                        class="glyphicon glyphicon-download"></i> </a></small>
-            </h1>
-        </div>
-        <div class="file-loading">
-            <input id="archivos" name="archivos[]" type="file" multiple=true class="file-loading" >
-        </div>
-
-    </div>
-  </div>
+ 
 </div>
 </div>
 

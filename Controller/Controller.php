@@ -10,7 +10,9 @@ class Controller {
 
   protected $view;
   protected $viewAdmin;
-  protected $model;
+  protected $modelCategoria;
+  protected $modelVehiculo;
+  protected $modelUser;
 
 
   public function __construct(){

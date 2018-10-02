@@ -1,16 +1,15 @@
 <?php
 
 require_once 'Views/UsuarioView.php';
-require_once 'Model/PaginaModel.php';
+require_once 'Model/userModel.php';
 require_once 'Controller/Controller.php';
 
 class LogInController extends Controller {
 
   public function __construct() {
     parent::__construct();
-    $this->model = new PaginaModel();
+    $this->modelUser = new userModel();
     $this->view= new UsuarioView();
-    //session_start();
   }
 
 
@@ -19,7 +18,7 @@ class LogInController extends Controller {
     $password = $_POST['contrasenia_Iniciar_Sesion'];
 
     if(!empty($mail) && !empty($password)){
-           $user = $this->model->getUser($mail);
+           $user = $this->modelUser->getUser($mail);
            if((!empty($user)) && password_verify($password, $user->contrasenia)) {
                session_start();
                $_SESSION['MAIL'] = $mail;
