@@ -1,66 +1,41 @@
 <?php
+  require_once "Views/View.php";
 
-  require_once "libs/Smarty.class.php";
-
-  class UsuarioView {
-
-    private $basehref;
+  class UsuarioView extends View {
 
     public function __construct() {
+      parent::__construct();
+    }
 
-       $this->basehref = '//'.$_SERVER['SERVER_NAME']
-                  .dirname($_SERVER['PHP_SELF']).'/';
-      }
+    public function mostrarCategorias($baseDeDatosCat,$baseDeDatosAut) {       
+      $this->smarty->assign('baseDeDatosCat',$baseDeDatosCat);
+      $this->smarty->assign('baseDeDatosAut',$baseDeDatosAut);       
+      $this->smarty->display('templates/index.tpl');
+    }
 
+    public function mostrarVehiculo($baseDeDatosAut){       
+      $this->smarty->assign('baseDeDatosAut',$baseDeDatosAut);       
+    }
 
-    public function mostrarCategorias($baseDeDatosCat,$baseDeDatosAut) {
-       $smarty = new Smarty();
-       $smarty->assign('baseDeDatosCat',$baseDeDatosCat);
-       $smarty->assign('baseDeDatosAut',$baseDeDatosAut);
-       $smarty->assign('basehref',$this->basehref);
-       $smarty->display('templates/index.tpl');
+    public function mostrarAgregarVehiculo($vehiculos,$categoria){      
+      $this->smarty->assign('vehiculos',$vehiculos);
+      $this->smarty->assign('categorias',$categoria);      
+      $this->smarty->display('templates/agregarVehiculo.tpl');
+    }
 
+    public function mostrarDetalleVehiculo($modelo){      
+      $this->smarty->assign('vehiculo',$modelo);      
+      $this->smarty->display('templates/detail_vehiculo.tpl');
+    }
 
-     }
+    public function mostrarVehiculos($id){      
+      $this->smarty->assign('vehiculos',$id);      
+      $this->smarty->display('templates/show_vehiculo_cat.tpl');
+    }
 
-   public function mostrarVehiculo($baseDeDatosAut){
-       $smarty = new Smarty();
-       $smarty->assign('baseDeDatosAut',$baseDeDatosAut);
-       $smarty->assign('basehref',$this->basehref);
-       //$smarty->display('templates/index.tpl');
-   }
-
-   public function mostrarAgregarVehiculo($vehiculos,$categoria){
-     $smarty = new Smarty();
-     $smarty->assign('vehiculos',$vehiculos);
-     $smarty->assign('categorias',$categoria);
-     $smarty->assign('basehref',$this->basehref);
-     $smarty->display('templates/agregarVehiculo.tpl');
-   }
-
-   public function mostrarDetalleVehiculo($modelo){
-     $smarty = new Smarty();
-     $smarty->assign('vehiculo',$modelo);
-     $smarty->assign('basehref',$this->basehref);
-     $smarty->display('templates/detail_vehiculo.tpl');
-   }
-
-   public function mostrarVehiculos($id){
-     $smarty = new Smarty();
-     $smarty->assign('vehiculos',$id);
-     $smarty->assign('basehref',$this->basehref);
-     $smarty->display('templates/show_vehiculo_cat.tpl');
-   }
-
-   public function mostrarLogIn($error = ""){
-     $smarty = new Smarty();
-     $smarty->assign('basehref',$this->basehref);
-     $smarty->assign('error',$error);
-     $smarty->display('templates/show_logIn.tpl');
-   }
-
-
-
+    public function mostrarLogIn($error = ""){      
+      $this->smarty->assign('error',$error);
+      $this->smarty->display('templates/show_logIn.tpl');
+    }
 }
-
 ?>

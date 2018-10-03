@@ -1,65 +1,40 @@
 <?php
-  require_once "libs/Smarty.class.php";
+  require_once "Views/View.php";
 
-  class AdminView {
+  class AdminView extends View {
 
-    private $basehref;
     private $mail;
 
     public function __construct() {
-
-       $this->basehref = '//'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/';
-       $this->mail = $_SESSION['MAIL'];
-
+      parent::__construct();
+      $this->mail = $_SESSION['MAIL'];
+      $this->smarty->assign('username',$this->mail);
     }
 
-
-
-    public function mostrarAdmin(){
-      $smarty = new Smarty();
-      $smarty->assign('basehref',$this->basehref);
-      $smarty->assign('username',$this->mail);
-      $smarty->display('templates/indexAdmin.tpl');
+    public function mostrarAdmin(){      
+      $this->smarty->display('templates/indexAdmin.tpl');
     }
 
-    public function mostrarAbmVehiculos($baseDeDatosAut,$baseDeDatosCat){
-      $smarty = new Smarty();
-      $smarty->assign('basehref',$this->basehref);
-      $smarty->assign('vehiculos',$baseDeDatosAut);
-      $smarty->assign('categorias',$baseDeDatosCat);
-      $smarty->assign('username',$this->mail);
-      $smarty->display('templates/agregarVehiculo.tpl');
-
+    public function mostrarAbmVehiculos($baseDeDatosAut,$baseDeDatosCat){      
+      $this->smarty->assign('vehiculos',$baseDeDatosAut);
+      $this->smarty->assign('categorias',$baseDeDatosCat);
+      $this->smarty->display('templates/agregarVehiculo.tpl');
     }
 
-    public function mostrarAbmCategoria($baseDeDatosCat){
-      $smarty = new Smarty();
-      $smarty->assign('basehref',$this->basehref);
-      $smarty->assign('categorias',$baseDeDatosCat);
-      $smarty->assign('username',$this->mail);
-      $smarty->display('templates/categoriaAdmin.tpl');
-
+    public function mostrarAbmCategoria($baseDeDatosCat){      
+      $this->smarty->assign('categorias',$baseDeDatosCat);
+      $this->smarty->display('templates/categoriaAdmin.tpl');
     }
 
-    public function editarVehiculos($baseDeDatosCat,$editado){
-      $smarty = new Smarty();
-      $smarty->assign('basehref',$this->basehref);
-      $smarty->assign('categorias',$baseDeDatosCat);
-      $smarty->assign('username',$this->mail);
-      $smarty->assign('vehiculo',$editado);
-      $smarty->display('templates/editarVehiculo.tpl');
-
+    public function editarVehiculos($baseDeDatosCat,$editado){      
+      $this->smarty->assign('categorias',$baseDeDatosCat);
+      $this->smarty->assign('vehiculo',$editado);
+      $this->smarty->display('templates/editarVehiculo.tpl');
     }
 
     public function editarCategoria($baseDeDatosCat){
-      $smarty = new Smarty();
-      $smarty->assign('basehref',$this->basehref);
-      $smarty->assign('categoria',$baseDeDatosCat);
-      $smarty->assign('username',$this->mail);
-      $smarty->display('templates/editarCategoria.tpl');
-
+      $this->smarty->assign('categoria',$baseDeDatosCat);
+      $this->smarty->display('templates/editarCategoria.tpl');
     }
-
   }
-
  ?>
