@@ -15,7 +15,7 @@
       {foreach from=$categorias item=$categoria}
       <div class=" col-md-3">
         <div class="col-md-12 contenedorHover">
-          <img class="imagen_vehiculo_hover" src="images/{$categoria->id_categoria}.jpg" alt="">
+          <img class="imagen_vehiculo_hover" src="images/1.jpg" alt="">
           <div class="overlay">
             <div class="text ">
               <a href="editarCategoria/{$categoria->id_categoria}"><button class="btn btn-success botonEditar" type="button">Editar</button></a>

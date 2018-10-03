@@ -11,7 +11,7 @@
       <div class="row">
         {foreach from=$baseDeDatosCat item=categoria}
         <div class="col-md-4 hover_div_categoria">
-          <a href="categoria/{$categoria->id_categoria}"><img class="Imagen_Auto" src="images/{$categoria->id_categoria}.jpg" alt=""></a>
+          <a href="categoria/{$categoria->id_categoria}"><img class="Imagen_Auto" src="images/1.jpg" alt=""></a>
             <h2 class="font-weight-light tituloCategoria">{$categoria->Nombre}</h2>
         </div>
         {/foreach}

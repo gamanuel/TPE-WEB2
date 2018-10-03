@@ -25,7 +25,7 @@
       <div class="col-md-12 contenedorHover">
         <img class="imagen_vehiculo_hover" src="images/3.jpg" alt="">
         <div class="overlay">
-          <div class="text ">
+          <div class="text">
             <a href="editarVehiculo/{$vehiculo->id_vehiculo}"><button class="btn btn-success botonEditar" type="button">Editar</button></a>
             <button class="btn btn-danger mt-2 botonBorrar" type="button" name="{$vehiculo->id_vehiculo}" data-name="{$vehiculo->modelo}">Eliminar</button>
           </div>
