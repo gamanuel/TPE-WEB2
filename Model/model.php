@@ -15,10 +15,12 @@ class Model {
       $this->conectarBaseDeDatos = new PDO('mysql:host='.HOST.';dbname='.BASE.';charset=utf8',USER,PASS); 
       // no hubo error
       
-    } catch (PDOException $e) {
+    } 
+    catch (PDOException $e) {
       //crear base de datos
       $this->crearDB();      
-    } catch (Exception $e) {
+    } 
+    catch (Exception $e) {
       echo "error";
       print "¡Error!: " . $e->getMessage() . "<br/>";
     }
@@ -49,22 +51,24 @@ class Model {
             $sentencia = $this->conectarBaseDeDatos->prepare($la_consulta);
             $sentencia->execute();
             $la_consulta = "";    
-           }
+          }
         }
       }
       
-    } catch (PDOException $e) {
+    } 
+    catch (PDOException $e) {
       //crear base de datos
       echo "error base nueva";      
-    } catch (Exception $e) {
+    } 
+    catch (Exception $e) {
       echo "error";
       print "¡Error!: " . $e->getMessage() . "<br/>";
     }
-    finally{
+    finally {
       //$this->conectarBaseDeDatos->closeCursor();
       //$this->conectarBaseDeDatos = null;
     }
    
     fclose($myfile);
   }
-}
+}         
