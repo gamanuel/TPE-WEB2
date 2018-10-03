@@ -39,6 +39,6 @@
     public function getLogin(){
       $this->view->mostrarLogIn();
     }
-
+    
   }
 
