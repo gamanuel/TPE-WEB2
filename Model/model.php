@@ -43,8 +43,8 @@ class Model {
       // recorrer archivo sql para generar las tablas y contenidos
       $myfile = fopen("Model/".BASE.".sql", "r") or die("Error al abrir el archivo!");
       $la_consulta = "";
-      while ($line = fgets($myfile)) {
-        $posicion = strpos($line,"-- ");
+      while ($line = fgets($myfile)) { //Devuelve Linea - Renglon
+        $posicion = strpos($line,"-- "); //encuentra "--"
         if($posicion === false){
           $la_consulta .= $line;
           if(strpos($line,";")>0){
